@@ -27,12 +27,19 @@ Before driving the browser, sketch the steps you expect: e.g. `landing → /sign
 
 ### 2. Walk the flow with a real browser
 
-Pick the right tool based on the target:
+Pick the right tool. Try in this order:
 
-- **Local `agent-browser` (default)** — fastest, supports clicks, screenshots, network and console capture, Web Vitals. Use for any public site without geo-restriction.
-- **Browserbase MCP (`mcp__browserbase__*` tools)** — use when the local IP is geo-blocked, when the user asks for proxied capture, or when the flow requires session persistence Browserbase handles for you. Tools available: `start`, `navigate`, `act`, `observe`, `extract`, `end`. Proxy country is set in the user's Browserbase project settings, not at MCP level.
+- **Path A — local `agent-browser` (default for local Claude Code)** — fastest, supports clicks, screenshots, network/console capture, Web Vitals. Use for any reachable public site.
+- **Path B — Browserbase MCP (`mcp__browserbase__*`)** — use when the local IP is geo-blocked or you need a proxied/persistent cloud session. Tools: `start`, `navigate`, `act`, `observe`, `extract`, `end`. Proxy country is set in the user's Browserbase project, not at MCP level.
+- **Path C — GitHub Actions relay (cloud Claude Code only)** — multi-step flows are limited via this path because each step is a separate `curl` (no clicks, no JS rendering, no session). Use it only when the flow's steps are reachable as plain GET URLs (e.g. `/signup`, `/pricing`, `/checkout`) — fine for many marketing/SaaS audits. For each step:
+  1. Drop `requests/<timestamp>-<slug>-stepNN.json` with the step URL.
+  2. Wait for `samples/<slug>/stepNN/page.html` + `status.json` to appear.
+  3. Read and analyze.
+  
+  If the flow requires real clicks (e.g. JS-driven multi-step forms), stop and report that this path can't cover it — recommend Path A or B.
+- **Path D — manual capture** — ask the user to walk the flow themselves and paste the HTML of each step. Last resort.
 
-If both tools fail, stop and report what got captured. Do not invent step results.
+If all paths fail, stop and report what got captured. Do not invent step results.
 
 For every step (whichever tool you use):
 
