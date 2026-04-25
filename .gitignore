@@ -2,6 +2,9 @@
 .env.local
 .env.*.local
 
-reports/
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.webp
 
 node_modules/
