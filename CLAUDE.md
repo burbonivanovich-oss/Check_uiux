@@ -112,12 +112,13 @@ That's it — no API keys, no third-party services, no local installs.
 
 **What this path gives you:**
 
-- ✅ HTML capture for any publicly reachable URL
+- ✅ Rendered HTML for any publicly reachable URL (Playwright executes JS, so SPAs and JS challenges like DataDome are handled)
+- ✅ Desktop + mobile screenshots (above-fold and full-page)
+- ✅ Bot challenge detection — `status.json` flags `challenged: true` if the page returned a captcha wall, so the agent doesn't analyze a challenge page by mistake
 - ✅ Works in cloud Claude Code with zero local setup
-- ✅ Free (within GitHub Actions free minutes)
-- ❌ No screenshots / mobile views / Web Vitals
-- ❌ Limited for JS-rendered SPAs (only SSR / static HTML)
-- ❌ No multi-step click flows (each step is a separate plain GET)
+- ✅ Free (within GitHub Actions free minutes; one fetch is ~60–90s of runner time)
+- ❌ No Web Vitals (Playwright Performance Observer would need extra wiring)
+- ❌ No multi-step click flows by default (each step is a separate page load — for clicks, run the user-journey-analyst locally with agent-browser)
 
 **Manual trigger** (without Claude): GitHub UI → Actions → fetch-page →
 "Run workflow" → enter URL and slug. Result lands in `samples/<slug>/`.

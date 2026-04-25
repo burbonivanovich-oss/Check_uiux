@@ -1,17 +1,22 @@
 name: fetch-page
 
-# GitHub Actions as a fetch proxy for cloud Claude Code.
+# GitHub Actions as a Playwright-based fetch proxy for cloud Claude Code.
 #
 # Cloud Claude Code's outbound network allowlist blocks arbitrary domains
 # (everything except github.com, registry.npmjs.org, api.anthropic.com).
-# This workflow uses github.com — which IS allowlisted — as a relay:
+# This workflow uses github.com — which IS allowlisted — as a relay.
 #
-#   1. Claude commits a request file to requests/<slug>.json
-#   2. This workflow triggers on push, fetches the URL with normal datacenter IP
-#   3. Result is committed back to samples/<slug>/page.html + status.json
-#   4. Claude pulls and reads the result
+# Flow:
+#   1. Claude commits requests/<id>.json {url, slug}
+#   2. This workflow triggers on push, runs Playwright (headless Chromium),
+#      executes JS challenges (DataDome/Cloudflare/Akamai), captures the real
+#      rendered page + desktop & mobile screenshots
+#   3. Result lands in samples/<slug>/page.html, status.json,
+#      desktop-{full,above-fold}.png, mobile-{full,above-fold}.png
+#   4. Claude polls samples/<slug>/status.json and reads the captured page
 #
-# Loop protection: GITHUB_TOKEN pushes don't trigger workflows again.
+# Loop protection: the [skip ci] tag in the commit message prevents the
+# workflow from re-triggering on its own commits.
 
 on:
   push:
@@ -36,11 +41,15 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Materialize workflow_dispatch input as a request
         if: github.event_name == 'workflow_dispatch'
@@ -51,71 +60,17 @@ jobs:
           mkdir -p requests
           ts=$(date +%s)
           jq -n --arg url "$URL" --arg slug "$SLUG" \
-            '{url: $url, slug: $slug, engine: "curl"}' \
+            '{url: $url, slug: $slug, engine: "playwright"}' \
             > "requests/${ts}-${SLUG}.json"
 
-      - name: Process pending requests
+      - name: Install Playwright + Chromium
         run: |
-          set -euo pipefail
-          shopt -s nullglob
+          npm init -y >/dev/null
+          npm install --no-save playwright@^1.49.0
+          npx playwright install --with-deps chromium
 
-          mkdir -p requests/processed samples
-
-          requests=(requests/*.json)
-          if [ ${#requests[@]} -eq 0 ]; then
-            echo "No pending requests."
-            exit 0
-          fi
-
-          for req in "${requests[@]}"; do
-            echo "::group::Processing $req"
-            url=$(jq -r '.url' "$req")
-            slug=$(jq -r '.slug' "$req")
-            engine=$(jq -r '.engine // "curl"' "$req")
-            ua=$(jq -r '.user_agent // "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"' "$req")
-            lang=$(jq -r '.accept_language // "ru-RU,ru;q=0.9,en;q=0.8"' "$req")
-
-            if [ -z "$url" ] || [ "$url" = "null" ] || [ -z "$slug" ] || [ "$slug" = "null" ]; then
-              echo "Missing url or slug in $req — skipping"
-              mv "$req" "requests/processed/"
-              continue
-            fi
-
-            mkdir -p "samples/$slug"
-
-            http_code=$(curl -sSL \
-              -A "$ua" \
-              -H "Accept-Language: $lang" \
-              -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
-              -H "Accept-Encoding: gzip, deflate, br" \
-              --compressed \
-              --max-time 30 \
-              -o "samples/$slug/page.html" \
-              -w "%{http_code}" \
-              "$url" || echo "000")
-
-            size=$(stat -c%s "samples/$slug/page.html" 2>/dev/null || echo 0)
-            fetched_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-            ok="false"
-            if [ "$http_code" = "200" ] && [ "$size" -gt 100 ]; then
-              ok="true"
-            fi
-
-            jq -n \
-              --arg url "$url" \
-              --arg slug "$slug" \
-              --arg engine "$engine" \
-              --arg fetched_at "$fetched_at" \
-              --arg http_status "$http_code" \
-              --arg size "$size" \
-              --argjson ok "$ok" \
-              '{url: $url, slug: $slug, engine: $engine, fetched_at: $fetched_at, http_status: ($http_status | tonumber), size_bytes: ($size | tonumber), ok: $ok}' \
-              > "samples/$slug/status.json"
-
-            echo "  → http $http_code, $size bytes, ok=$ok"
-            mv "$req" "requests/processed/"
-            echo "::endgroup::"
-          done
+      - name: Process pending requests
+        run: node scripts/fetch.mjs
 
       - name: Commit results
         run: |
