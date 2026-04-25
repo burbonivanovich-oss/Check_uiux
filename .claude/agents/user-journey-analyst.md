@@ -25,9 +25,16 @@ If signup will create real billing or send real emails, stop and confirm before 
 
 Before driving the browser, sketch the steps you expect: e.g. `landing → /signup → email verify → onboarding step 1 → ... → first value moment`. This is your hypothesis. Deviations from it are findings.
 
-### 2. Walk the flow with agent-browser
+### 2. Walk the flow with a real browser
 
-Load the `agent-browser` skill. For every step:
+Pick the right tool based on the target:
+
+- **Local `agent-browser` (default)** — fastest, supports clicks, screenshots, network and console capture, Web Vitals. Use for any public site without geo-restriction.
+- **Browserbase MCP (`mcp__browserbase__*` tools)** — use when the local IP is geo-blocked, when the user asks for proxied capture, or when the flow requires session persistence Browserbase handles for you. Tools available: `start`, `navigate`, `act`, `observe`, `extract`, `end`. Proxy country is set in the user's Browserbase project settings, not at MCP level.
+
+If both tools fail, stop and report what got captured. Do not invent step results.
+
+For every step (whichever tool you use):
 
 - Capture a screenshot (desktop 1440px). Capture mobile 390px for any step that is form-heavy or pricing-related.
 - Record the URL, page title, primary CTA label, and any error / validation messages.

@@ -42,17 +42,46 @@ Located in `.claude/skills/`. Activated automatically by Claude when the task ma
 > Set up product marketing context for my product
 ```
 
-## Setup the agent-browser CLI (required for any audit)
+## Browser capture: two paths
 
-The `agent-browser` skill is a discovery stub — it expects the CLI to be
-installed on the machine running Claude Code:
+The agents can capture pages with either of two tools. They pick automatically;
+you only need at least one of these working.
+
+### Path A — local `agent-browser` CLI (default, fastest, free)
 
 ```bash
 npm i -g agent-browser
-agent-browser install
+agent-browser install --with-deps   # `--with-deps` only on Linux
+agent-browser doctor                # sanity check
 ```
 
-Verify with `agent-browser skills list`.
+Verify with `agent-browser skills list`. Works for any public page that does
+**not** geo-block your IP.
+
+### Path B — Browserbase MCP server (cloud browser + proxy / RU geo)
+
+Required when the local IP is blocked (e.g. `kontur.ru` returns 403 outside RU)
+or when running Claude Code on the web (claude.ai/code) where the sandbox sits
+on US infrastructure.
+
+1. **Get keys** — sign up at [browserbase.com](https://browserbase.com), then:
+   - Copy `BROWSERBASE_API_KEY` from Settings → API Keys.
+   - Copy `BROWSERBASE_PROJECT_ID` from Settings → Projects.
+   - Get a free Gemini key at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) — Stagehand (the engine inside Browserbase MCP) uses it by default.
+2. **Set country to RU for Russian sites** — in the Browserbase dashboard, open your project → Proxies → set the residential proxy pool to Russia. Without this, sessions still come out of US/EU IPs and `kontur.ru` will keep 403'ing.
+3. **Export the env vars** before launching Claude Code:
+   ```bash
+   cp .env.example .env
+   # fill in the three keys
+   set -a && source .env && set +a
+   claude   # or open the IDE that runs Claude Code
+   ```
+   `.mcp.json` references these vars via `${BROWSERBASE_API_KEY}` etc., so do
+   not paste keys into the file.
+4. **Verify** — in a Claude Code session, run a tool from the `mcp__browserbase__*` family (e.g. ask Claude to "open browserbase and navigate to example.com"). Successful navigation = MCP wired up.
+
+**Cost note**: Browserbase sessions are billed per minute. The agents always
+end sessions when done. Free tier is enough for testing one or two pages.
 
 ## Output convention
 

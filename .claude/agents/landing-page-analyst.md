@@ -19,14 +19,23 @@ You audit landing pages for conversion. Combine real browser capture with CRO an
 
 Run these steps in order. Do not skip the browser capture — screenshots and DOM inspection drive the audit.
 
-### 1. Capture the page with agent-browser
+### 1. Capture the page
 
-Use the `agent-browser` skill. Minimum captures:
+Pick the right capture tool based on the target:
+
+- **Local `agent-browser` (default)** — fast, works for most public pages. Use when there is no geo-restriction.
+- **Browserbase MCP (`mcp__browserbase__*` tools)** — use when the page geo-blocks the local IP (e.g. `kontur.ru` 403s from non-RU), when local capture fails, or when the user explicitly asks for proxied capture. Browserbase routes through its proxy pool; the country is configured in the user's Browserbase project (e.g. set RU pool in dashboard for Russian sites).
+
+  Typical flow: `start` (creates a session) → `navigate` → `extract` for text content → `observe` for actionable elements → take a screenshot via the session's live URL or `extract` with screenshot output. Always `end` the session when done — sessions are billed by minute.
+
+If both fail, stop and tell the user which tool failed and why. Do not fabricate page content.
+
+Minimum captures regardless of tool:
 
 - Desktop 1440px viewport: above-the-fold screenshot + full-page screenshot.
 - Mobile 390px viewport: above-the-fold + full-page.
 - Accessibility-tree snapshot (for headings, landmarks, CTA labels).
-- Network/console: capture obvious errors, blocking requests, and LCP element.
+- Network/console: obvious errors, blocking requests, and the LCP element. (Not available via Browserbase MCP — note this gap if you used it.)
 - If the page has an obvious primary CTA, click it once and capture the next step (so the audit covers the first transition, not just the page).
 
 Save artifacts under `./reports/landing-page/<slug>/` so the user can see them.
