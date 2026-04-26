@@ -1,0 +1,11 @@
+{
+  "url": "https://kontur.ru/market/price/77?group=51",
+  "slug": "kontur-price-roznitsa",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T08:53:53.176Z",
+  "http_status": 200,
+  "size_bytes": 758990,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}

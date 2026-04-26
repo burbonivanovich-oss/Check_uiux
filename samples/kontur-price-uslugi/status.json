@@ -1,0 +1,11 @@
+{
+  "url": "https://kontur.ru/market/price/77?group=53",
+  "slug": "kontur-price-uslugi",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T08:54:19.601Z",
+  "http_status": 200,
+  "size_bytes": 758991,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}
