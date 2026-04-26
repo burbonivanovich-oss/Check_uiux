@@ -1,0 +1,11 @@
+{
+  "url": "https://iiko.ru/",
+  "slug": "iiko-main",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T04:28:45.346Z",
+  "http_status": 200,
+  "size_bytes": 250488,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}

@@ -1,0 +1,11 @@
+{
+  "url": "https://kontur.ru/market/price-group",
+  "slug": "kontur-price-group",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T04:30:06.393Z",
+  "http_status": 200,
+  "size_bytes": 143489,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}
