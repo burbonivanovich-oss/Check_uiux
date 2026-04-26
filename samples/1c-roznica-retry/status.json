@@ -1,0 +1,11 @@
+{
+  "url": "https://solutions.1c.ru/catalog/retail",
+  "slug": "1c-roznica-retry",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T08:49:48.052Z",
+  "http_status": 200,
+  "size_bytes": 81466,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}

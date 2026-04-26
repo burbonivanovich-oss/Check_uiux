@@ -1,0 +1,1241 @@
+<!DOCTYPE html><html lang="ru" class="bx-core bx-mac bx-no-touch bx-no-retina bx-chrome fix-scroll"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>1С:Розница 8 - О решении - Описание</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/local/templates/sol23/build/img/favicon.ico">
+    <link media="all" onload="this.media='all'" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link media="all" onload="this.media='all'" href="https://fonts.googleapis.com/icon?family=Material+Icons&amp;display=swap" rel="stylesheet">
+    <link rel="preload" href="/local/templates/sol23/build/css/style.min.css?1774260777" as="style">
+    <link rel="stylesheet" href="/local/templates/sol23/build/css/style.min.css?1774260777">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="Торговля">
+<meta name="description" content="Решение предназначено для автоматизации торговой деятельности магазинов и других розничных торговых точек, в том числе объединенных в торговую сеть.">
+<link rel="canonical" href="https://solutions.1c.ru/catalog/retail">
+<link href="/bitrix/cache/css/s1/sol23/template_f461f916a5ab09da1ac783dbbf7dfe77/template_f461f916a5ab09da1ac783dbbf7dfe77_v1.css?17756409202944" type="text/css" rel="stylesheet" data-template-style="true">
+<script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script>(window.BX||top.BX).message({"JS_CORE_LOADING":"Загрузка...","JS_CORE_NO_DATA":"- Нет данных -","JS_CORE_WINDOW_CLOSE":"Закрыть","JS_CORE_WINDOW_EXPAND":"Развернуть","JS_CORE_WINDOW_NARROW":"Свернуть в окно","JS_CORE_WINDOW_SAVE":"Сохранить","JS_CORE_WINDOW_CANCEL":"Отменить","JS_CORE_WINDOW_CONTINUE":"Продолжить","JS_CORE_H":"ч","JS_CORE_M":"м","JS_CORE_S":"с","JSADM_AI_HIDE_EXTRA":"Скрыть лишние","JSADM_AI_ALL_NOTIF":"Показать все","JSADM_AUTH_REQ":"Требуется авторизация!","JS_CORE_WINDOW_AUTH":"Войти","JS_CORE_IMAGE_FULL":"Полный размер"});</script>
+
+<script src="/bitrix/js/main/core/core.min.js?1775640876245644"></script>
+
+<script>BX.Runtime.registerExtension({"name":"main.core","namespace":"BX","loaded":true});</script>
+<script>BX.setJSList(["\/bitrix\/js\/main\/core\/core_ajax.js","\/bitrix\/js\/main\/core\/core_promise.js","\/bitrix\/js\/main\/polyfill\/promise\/js\/promise.js","\/bitrix\/js\/main\/loadext\/loadext.js","\/bitrix\/js\/main\/loadext\/extension.js","\/bitrix\/js\/main\/polyfill\/promise\/js\/promise.js","\/bitrix\/js\/main\/polyfill\/find\/js\/find.js","\/bitrix\/js\/main\/polyfill\/includes\/js\/includes.js","\/bitrix\/js\/main\/polyfill\/matches\/js\/matches.js","\/bitrix\/js\/ui\/polyfill\/closest\/js\/closest.js","\/bitrix\/js\/main\/polyfill\/fill\/main.polyfill.fill.js","\/bitrix\/js\/main\/polyfill\/find\/js\/find.js","\/bitrix\/js\/main\/polyfill\/matches\/js\/matches.js","\/bitrix\/js\/main\/polyfill\/core\/dist\/polyfill.bundle.js","\/bitrix\/js\/main\/core\/core.js","\/bitrix\/js\/main\/polyfill\/intersectionobserver\/js\/intersectionobserver.js","\/bitrix\/js\/main\/lazyload\/dist\/lazyload.bundle.js","\/bitrix\/js\/main\/polyfill\/core\/dist\/polyfill.bundle.js","\/bitrix\/js\/main\/parambag\/dist\/parambag.bundle.js"]);
+</script>
+<script>BX.Runtime.registerExtension({"name":"ui.dexie","namespace":"BX.DexieExport","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"fc","namespace":"window","loaded":true});</script>
+<script>(window.BX||top.BX).message({"LANGUAGE_ID":"ru","FORMAT_DATE":"DD.MM.YYYY","FORMAT_DATETIME":"DD.MM.YYYY HH:MI:SS","COOKIE_PREFIX":"BITRIX_SM","SERVER_TZ_OFFSET":"10800","UTF_MODE":"Y","SITE_ID":"s1","SITE_DIR":"\/","USER_ID":"","SERVER_TIME":1777193389,"USER_TZ_OFFSET":0,"USER_TZ_AUTO":"Y","bitrix_sessid":"67e7d084ddd9a2b1667957d1f93875c9"});</script>
+
+
+<script src="/bitrix/js/ui/dexie/dist/dexie.bundle.min.js?1751451643102530"></script>
+<script src="/bitrix/js/main/core/core_frame_cache.min.js?177564087610246"></script>
+<script>BX.setCSSList(["\/local\/templates\/sol23\/styles.css","\/local\/templates\/sol23\/template_styles.css"]);</script>
+<script>
+					(function () {
+						"use strict";
+
+						var counter = function ()
+						{
+							var cookie = (function (name) {
+								var parts = ("; " + document.cookie).split("; " + name + "=");
+								if (parts.length == 2) {
+									try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
+									catch (e) {}
+								}
+							})("BITRIX_CONVERSION_CONTEXT_s1");
+
+							if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
+								return;
+
+							var request = new XMLHttpRequest();
+							request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
+							request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							request.send(
+								"SITE_ID="+encodeURIComponent("s1")+
+								"&sessid="+encodeURIComponent(BX.bitrix_sessid())+
+								"&HTTP_REFERER="+encodeURIComponent(document.referrer)
+							);
+						};
+
+						if (window.frameRequestStart === true)
+							BX.addCustomEvent("onFrameDataReceived", counter);
+						else
+							BX.ready(counter);
+					})();
+				</script>
+
+
+
+    <script src="/local/templates/sol23/jsHelper.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ym(46306794, "init", {"clickmap":true,"trackLinks":true,"accurateTrackBounce":true,"webvisor":true});
+window.__ym_metrics = [46306794];    </script>
+<link rel="preload" as="style" href="https://solutions.1c.ru/local/templates/sol23/build/js/../css/chunks/form.80e729e5c340c8d3232a.css"><link rel="stylesheet" type="text/css" href="https://solutions.1c.ru/local/templates/sol23/build/js/../css/chunks/form.80e729e5c340c8d3232a.css"></head>
+<body>
+        <header class="header_main">
+        <div class="container">
+            <div class="header_main__block">
+                <div class="site_info">
+                    <div class="site_info__logo">
+                                                    <a href="/">
+                                <svg class="icon_logo"><use xlink:href="/local/templates/sol23/build/svg/main.svg#logo"></use></svg>
+                            </a>
+                                            </div>
+                    <div class="site_info__name">
+                        Отраслевые<br> и специализированные<br class="sm_d_none"> решения<br class="sm_d_inline"> <span class="c_dark_grey">1С:Предприятие</span>
+                    </div>
+                </div>
+
+                <div class="header_catalog">
+                    <button class="btn btn_orange btn_catalog">
+                        <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_catalog"></use></svg>
+                        <span class="btn_txt">Каталог</span>
+                    </button>
+                </div>
+
+                <div class="header_about">
+                    <button class="btn btn_grey btn_about _dropdown_initialize" data-dropdown="about">
+                        О&nbsp;продукции
+                    </button>
+                    <div class="header_about__wrap" data-dropdown-target="about">
+                        <div class="header_about__title">О продукции</div>
+                            <nav class="header_nav">
+        <ul class="header_about__list">
+                            <li class="header_about__list_item">
+                    <a href="/projects/">Внедрения</a>
+                </li>
+                            <li class="header_about__list_item">
+                    <a href="/news/">Публикации</a>
+                </li>
+                            <li class="header_about__list_item">
+                    <a href="/events/">Мероприятия</a>
+                </li>
+                            <li class="header_about__list_item">
+                    <a href="/franch/">Партнеры</a>
+                </li>
+                            <li class="header_about__list_item">
+                    <a href="/forum/">Форум</a>
+                </li>
+                    </ul>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="header_search">
+                    <button class="btn btn_search">
+                        <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_search"></use></svg>
+                    </button>
+
+                    <div class="header_search__form">
+                        <form method="get" class="form_search" action="/search/">
+                            <div class="form_block">
+                                <input maxlength="255" type="text" name="q" value="" class="search_input _clearing" autocomplete="off" aria-controls="autoCompleteResult" aria-autocomplete="both" role="combobox" aria-owns="autoCompleteResult" aria-haspopup="true" aria-expanded="false"><ul id="autoCompleteResult" role="listbox" hidden="" class="autocomplete_list"></ul>
+                                <svg class="search_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_search"></use></svg>
+                                <button type="button" class="btn_clear close _iicl"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="header_shine">
+                    <a href="https://plus.1c.ru/?from=solutions1c" onclick="ym(46306794, 'reachGoal', 'sol2plus_header');return true;" target="_blank" class="btn_shine _tip_initialize" data-tip="1С:Плюс — дополнительные возможности для вашей программы 1С">
+                        <div class="shine">
+                            <div class="shine_1"></div>
+                            <div class="shine_2"></div>
+                            <div class="shine_3"></div>
+                            <div class="shine_4"></div>
+                            <div class="shine_5"></div>
+                            <div class="shine_6"></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="header_links">
+                    <div class="header_geo">
+                        <button type="button" id="header_geo_curgeo" class="btn_link btn_geo _dropdown_initialize _active" data-dropdown="geo">
+                            <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_geo"></use></svg>
+                            <span class="btn_txt curGeoName">Вашингтон</span>
+                        </button>
+
+                        <div class="header_geo__wrap _show" data-dropdown-target="geo">
+                            <button type="button" class="btn_link btn_geo">
+                                <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_geo"></use></svg>
+                                <span class="btn_txt curGeoName">Вашингтон</span>
+                            </button>
+                            <div class="header_geo__txt">Ваш город <span class="curGeoName">Вашингтон</span>?</div>
+                            <div class="header_geo__btns">
+                                <button type="button" class="btn btn_beige _dropdown_initialize" data-dropdown="city">Нет</button>
+                                <button type="button" class="btn btn_orange btn_geo__agree">Да</button>
+                            </div>
+                        </div>
+
+                        <div class="header_geo__wrap" data-dropdown-target="city">
+                            <form class="form_geo" method="get">
+                                <div class="form_block">
+                                    <input type="text" name="city" class="form_geo__input _clearing" placeholder="Ваш город" autocomplete="off" aria-controls="geoResult" aria-autocomplete="both" role="combobox" aria-owns="geoResult" aria-haspopup="true" aria-expanded="false"><ul id="geoResult" role="listbox" hidden="" class="geo_result__list"></ul>
+
+                                    <svg class="search_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_search"></use></svg>
+                                    <button type="button" class="btn_clear close _iicl"></button>
+                                </div>
+                                <div class="form_geo__cities">
+                                    <div class="form_geo__city form_geo__city_current">Москва</div>
+                                    <div class="form_geo__city">Санкт-Петербург</div>
+                                    <div class="form_geo__city">Екатеринбург</div>
+                                    <div class="form_geo__city">Краснодар</div>
+                                    <div class="form_geo__city">Нижний Новгород</div>
+                                    <div class="form_geo__city">Казань</div>
+                                    <div class="form_geo__city">Ростов-на-Дону</div>
+                                    <div class="form_geo__city">Новосибирск</div>
+                                    <div class="form_geo__city">Хабаровск</div>
+                                    <div class="form_geo__city">Владивосток</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_basket">
+                        <a href="/order/" class="btn_link btn_basket header_basket__link _loading">
+                            <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_basket"></use></svg>
+                            <span class="btn_txt">Корзина</span>
+                        </a>
+                    </div>
+
+                    <div class="header_user" id="user_header_auth_form">
+                        <!--'start_frame_cache_user_header_auth_form'-->                <div class="user" id="user_header_auth_form">
+                <button type="button" class="btn_link btn_user">
+                    <svg class="btn_icon"><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_user"></use></svg>
+                    <span class="btn_txt"><a href="/auth/?backUrl=%2Fcatalog%2Fretail">Вход</a></span>
+                </button>
+            </div>
+            <!--'end_frame_cache_user_header_auth_form'-->                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    
+    <div id="catalogHead" class="catalog_head">
+        <div class="catalog_main">
+            <div class="catalog_solution">
+    <div class="catalog_title">Решения для отраслей</div>
+    <div class="catalog_items">
+        <ul class="catalog_list">
+                            <li class="catalog_list__item">
+                    <a href="/agro" class="catalog_item" data-sub="agro">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#agro"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Сельское хозяйство и лесная промышленность</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/production" class="catalog_item" data-sub="production">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#production"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Производство, ТЭК</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/construction" class="catalog_item" data-sub="construction">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#construction"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Строительство, девелопмент, ЖКХ</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/trade-wms" class="catalog_item" data-sub="trade-wms">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#trade-wms"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Торговля, склад, логистика, транспорт</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/finances" class="catalog_item" data-sub="finances">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#finances"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Финансовый сектор</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/horeca" class="catalog_item" data-sub="horeca">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#horeca"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Общественное и плановое питание, гостиничный бизнес</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/education" class="catalog_item" data-sub="education">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#education"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Образование, культура</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/med" class="catalog_item" data-sub="med">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#med"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Здравоохранение и медицина</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/profservices" class="catalog_item" data-sub="profservices">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#profservices"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Профессиональные услуги</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/state-municipal" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#state-municipal"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Государственное и муниципальное управление</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/nonprofit" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#nonprofit"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Некоммерческие организации</span>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+<div class="catalog_subsolution">
+    <div class="catalog_items">
+                    <ul class="catalog_list" data-sub="agro">
+                                    <li class="catalog_list__item">
+                        <a href="/agriculture" class="catalog_item">
+                            <span class="catalog_txt">Сельское хозяйство</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/forestry" class="catalog_item">
+                            <span class="catalog_txt">Лесная промышленность</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="production">
+                                    <li class="catalog_list__item">
+                        <a href="/food-industry" class="catalog_item">
+                            <span class="catalog_txt">Пищевая промышленность</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/fuel-energy" class="catalog_item">
+                            <span class="catalog_txt">Топливно-энергетический комплекс</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/machinery" class="catalog_item">
+                            <span class="catalog_txt">Машиностроение</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/metallurgy" class="catalog_item">
+                            <span class="catalog_txt">Металлургия</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/recycling" class="catalog_item">
+                            <span class="catalog_txt">Переработка отходов и вторсырья</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/chemicals" class="catalog_item">
+                            <span class="catalog_txt">Химическая и фармацевтическая промышленность</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/polygraphy" class="catalog_item">
+                            <span class="catalog_txt">Полиграфия, производители упаковки и издательства</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/production-building-materials" class="catalog_item">
+                            <span class="catalog_txt">Производство строительных материалов</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/mining" class="catalog_item">
+                            <span class="catalog_txt">Горнодобывающая промышленность</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="construction">
+                                    <li class="catalog_list__item">
+                        <a href="/stroy" class="catalog_item">
+                            <span class="catalog_txt">Строительство</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/develop" class="catalog_item">
+                            <span class="catalog_txt">Девелопмент</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/houseservices" class="catalog_item">
+                            <span class="catalog_txt">ЖКХ</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/realty" class="catalog_item">
+                            <span class="catalog_txt">Недвижимость</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="trade-wms">
+                                    <li class="catalog_list__item">
+                        <a href="/trade" class="catalog_item">
+                            <span class="catalog_txt">Торговля</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/store" class="catalog_item">
+                            <span class="catalog_txt">Склад</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/logistics" class="catalog_item">
+                            <span class="catalog_txt">Логистика</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/transport" class="catalog_item">
+                            <span class="catalog_txt">Транспорт</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="finances">
+                                    <li class="catalog_list__item">
+                        <a href="/insurance" class="catalog_item">
+                            <span class="catalog_txt">Страхование</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/pawn-shop" class="catalog_item">
+                            <span class="catalog_txt">Ломбард</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/leasing" class="catalog_item">
+                            <span class="catalog_txt">Лизинг</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/credit_company" class="catalog_item">
+                            <span class="catalog_txt">Кредитные организации</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/nocredit_compani" class="catalog_item">
+                            <span class="catalog_txt">Некредитные финансовые организации</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="horeca">
+                                    <li class="catalog_list__item">
+                        <a href="/food" class="catalog_item">
+                            <span class="catalog_txt">Рестораны и общественное питание</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/plan-meal" class="catalog_item">
+                            <span class="catalog_txt">Плановое питание</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/hotel-business" class="catalog_item">
+                            <span class="catalog_txt">Гостиничный бизнес</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="education">
+                                    <li class="catalog_list__item">
+                        <a href="/universities" class="catalog_item">
+                            <span class="catalog_txt">ВУЗы</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/colleges" class="catalog_item">
+                            <span class="catalog_txt">Колледжи (СПО)</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/edu-dep" class="catalog_item">
+                            <span class="catalog_txt">Региональное и муниципальное управление образованием</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/school" class="catalog_item">
+                            <span class="catalog_txt">Школы</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/preschool" class="catalog_item">
+                            <span class="catalog_txt">Дошкольные учреждения</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/add-edu" class="catalog_item">
+                            <span class="catalog_txt">Дополнительное образование</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/cultural" class="catalog_item">
+                            <span class="catalog_txt">Учреждения культуры</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/libraries" class="catalog_item">
+                            <span class="catalog_txt">Библиотеки</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="med">
+                                    <li class="catalog_list__item">
+                        <a href="/clinic" class="catalog_item">
+                            <span class="catalog_txt">Поликлиники</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/hospital" class="catalog_item">
+                            <span class="catalog_txt">Стационары</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/resort" class="catalog_item">
+                            <span class="catalog_txt">Санатории</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/health-department" class="catalog_item">
+                            <span class="catalog_txt">Управление здравоохранением</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/pharm" class="catalog_item">
+                            <span class="catalog_txt">Фармацевтика</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/ambulance" class="catalog_item">
+                            <span class="catalog_txt">Скорая помощь</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="profservices">
+                                    <li class="catalog_list__item">
+                        <a href="/staff" class="catalog_item">
+                            <span class="catalog_txt">Подбор и наем персонала</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/property" class="catalog_item">
+                            <span class="catalog_txt">Управление имуществом</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/tourist-business" class="catalog_item">
+                            <span class="catalog_txt">Туристический бизнес</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/service-repair" class="catalog_item">
+                            <span class="catalog_txt">Сервисно-ремонтные организации</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/project" class="catalog_item">
+                            <span class="catalog_txt">Проектные организации</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/it-services" class="catalog_item">
+                            <span class="catalog_txt">ИТ-услуги</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/catalog/branch/54/" class="catalog_item">
+                            <span class="catalog_txt">Рекламные агентства</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/beauty-shop" class="catalog_item">
+                            <span class="catalog_txt">Салоны красоты, SPA, фитнес-клубы</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/photo-services" class="catalog_item">
+                            <span class="catalog_txt">Фотоуслуги</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/ritual-services" class="catalog_item">
+                            <span class="catalog_txt">Ритуальные услуги</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="state-municipal">
+                            </ul>
+                    <ul class="catalog_list" data-sub="nonprofit">
+                            </ul>
+            </div>
+</div>
+            <div class="catalog_function">
+    <div class="catalog_title">Решения для функциональных&nbsp;задач</div>
+    <div class="catalog_items">
+        <ul class="catalog_list">
+                            <li class="catalog_list__item">
+                    <a href="/erp" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#erp"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Комплексное управление ресурсами предприятия (ERP)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/crm" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#crm"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Взаимоотношение с клиентами (CRM) и маркетинг</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/hrm" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#hrm"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Зарплата, управление персоналом и кадровый учет (HRM)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/frp" class="catalog_item" data-sub="frp">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#frp"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управленческий и финансовый учет (FRP)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/sfm-wms" class="catalog_item" data-sub="sfm-wms">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#sfm-wms"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управление продажами, логистикой и транспортом (SFM, WMS, TMS)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/pdm-mdm" class="catalog_item" data-sub="pdm-mdm">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#pdm-mdm"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управление инженерными данными и НСИ (PDM, MDM)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/itsm" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#itsm"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управление информационными технологиями (ITIL)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/eam" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#eam"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управление ремонтами (CMM, EAM)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/pmo" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#pmo"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Управление проектами и портфелями проектов (PMO, EPM)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/e-learning" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#e-learning"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Электронное обучение (e-Learning)</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/acc-tax" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#acc-tax"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Бухгалтерский и налоговый учет</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/document" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#document"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Документооборот</span>
+                    </a>
+                </li>
+                            <li class="catalog_list__item">
+                    <a href="/ehs" class="catalog_item">
+                        <span class="catalog_img">
+                                                            <svg><use xlink:href="/local/templates/sol23/build/svg/catalog.svg#ehs"></use></svg>
+                                                    </span>
+                        <span class="catalog_txt">Охрана труда и окружающей среды, безопасность (EHS)</span>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+<div class="catalog_subfunction">
+    <div class="catalog_items">
+                    <ul class="catalog_list" data-sub="erp">
+                            </ul>
+                    <ul class="catalog_list" data-sub="crm">
+                            </ul>
+                    <ul class="catalog_list" data-sub="hrm">
+                            </ul>
+                    <ul class="catalog_list" data-sub="frp">
+                                    <li class="catalog_list__item">
+                        <a href="/management-acc" class="catalog_item">
+                            <span class="catalog_txt">Управленческий учет</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/financial-acc" class="catalog_item">
+                            <span class="catalog_txt">Финансовый учет</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="sfm-wms">
+                                    <li class="catalog_list__item">
+                        <a href="/sfm" class="catalog_item">
+                            <span class="catalog_txt">Управление продажами</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/wms" class="catalog_item">
+                            <span class="catalog_txt">Управление складом и логистикой</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/tms" class="catalog_item">
+                            <span class="catalog_txt">Управление транспортом</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="pdm-mdm">
+                                    <li class="catalog_list__item">
+                        <a href="/pdm" class="catalog_item">
+                            <span class="catalog_txt">Управление инженерными данными</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/mdm" class="catalog_item">
+                            <span class="catalog_txt">Управление нормативно-справочной информацией</span>
+                        </a>
+                    </li>
+                                    <li class="catalog_list__item">
+                        <a href="/spatial-data" class="catalog_item">
+                            <span class="catalog_txt">Управление пространственными данными</span>
+                        </a>
+                    </li>
+                            </ul>
+                    <ul class="catalog_list" data-sub="itsm">
+                            </ul>
+                    <ul class="catalog_list" data-sub="eam">
+                            </ul>
+                    <ul class="catalog_list" data-sub="pmo">
+                            </ul>
+                    <ul class="catalog_list" data-sub="e-learning">
+                            </ul>
+                    <ul class="catalog_list" data-sub="acc-tax">
+                            </ul>
+                    <ul class="catalog_list" data-sub="document">
+                            </ul>
+                    <ul class="catalog_list" data-sub="ehs">
+                            </ul>
+            </div>
+</div>        </div>
+        <div class="catalog_more">
+                <ul class="catalog_list">
+                    <li class="catalog_list__item">
+                                <a href="/add/" class="catalog_item">
+                    <span class="catalog_txt">Дополнения к программам 1С</span>
+                </a>
+                            </li>
+                    <li class="catalog_list__item">
+                                <a href="/digital/" class="catalog_item">
+                    <span class="catalog_txt">Цифровые технологии в решениях 1С</span>
+                </a>
+                            </li>
+                    <li class="catalog_list__item">
+                                <a href="/ecosystem/?from=eco_menu" class="catalog_item">
+                    <span class="catalog_txt">Экосистема 1С</span>
+                </a>
+                            </li>
+                    <li class="catalog_list__item">
+                                <a href="/cloud/" class="catalog_item">
+                    <span class="catalog_txt">Работа в облачном сервисе 1С </span>
+                </a>
+                            </li>
+                    <li class="catalog_list__item">
+                                <a href="/autochoice/" class="catalog_item">
+                    <span class="catalog_txt">Автоподбор лицензий и калькуляция стоимости поставки</span>
+                </a>
+                            </li>
+                    <li class="catalog_list__item">
+                                <a href="/about-products/" class="catalog_item">
+                    <span class="catalog_txt">О решениях 1С</span>
+                </a>
+                            </li>
+            </ul>
+        </div>
+        <div class="close"></div>
+    </div>
+
+    <div class="main ">
+        <div class="container">
+                            <div class="breadcrumbs"><ul class="breadcrumbs_list"><li class="breadcrumbs_item"><a href="/">Главная</a></li><li class="breadcrumbs_item"><a title="Каталог" href="/catalog/">Каталог</a></li><li class="breadcrumbs_item"><a title="1С:Розница 8" href="/catalog/retail">1С:Розница 8</a></li><li class="breadcrumbs_current">О решении</li></ul></div>                                        <main class="main_main page_product" data-product-id="391">
+                    <article class="product_card page_card">
+	                                            <header class="page_header">
+                            <div class="page_header__title">
+                                            <div class="product_icon">
+            <img src="/upload/iblock/e8a/roznica8.svg" width="40" height="40" alt="1С:Розница 8">
+        </div>
+        <h1 class="product_name">1С:Розница 8</h1>
+     <div class="achievements">
+				            <div class="achievements_item card fix_main _tip_initialize" data-tip="&lt;a href=&quot;https://reestr.digital.gov.ru/reestr/301394/&quot; target=&quot;_blank&quot;&gt;Включён в Реестр российского ПО&lt;/a&gt;">
+                <svg><use xlink:href="/local/templates/sol23/build/svg/main.svg#achievement_reestr"></use></svg>
+            </div>
+				    </div>
+                            </div>
+                            <div class="page_header__content"><a href="/catalog/" class="btn btn_grey link_back btn_return_page">К&nbsp;списку</a></div>                        </header>
+	                            <div class="product_menu">
+            <nav class="product_menu__main">
+                <ul class="product_menu__list">
+					                            <li class="product_menu__item product_menu__item_current">
+                                <span class="product_menu__current">
+                                    О решении                                </span>
+                            </li>
+					    					                            <li class="product_menu__item">
+                                <a href="/catalog/retail/buy" class="product_menu__link">
+                                    Приобретение                                </a>
+                            </li>
+					    					                            <li class="product_menu__item">
+                                <a href="/catalog/retail/ext" class="product_menu__link">
+                                    Дополнения                                </a>
+                            </li>
+					    					                            <li class="product_menu__item">
+                                <a href="/catalog/retail/support" class="product_menu__link">
+                                    Поддержка                                </a>
+                            </li>
+					    					                            <li class="product_menu__item">
+                                <a href="/catalog/retail/partners" class="product_menu__link">
+                                    Партнерам                                </a>
+                            </li>
+					    										                </ul>
+            </nav>
+			                <nav class="product_menu__sub">
+                    <ul class="product_menu__list">
+						                            <li class="product_menu__item product_menu__item_current">
+                                <span class="product_menu__link product_menu__current" data-page="/catalog/retail">Описание</span>
+                            </li>
+						                            <li class="product_menu__item ">
+                                <span class="product_menu__link " data-page="/catalog/retail/features">Возможности</span>
+                            </li>
+						                            <li class="product_menu__item ">
+                                <span class="product_menu__link " data-page="/catalog/retail/digital">Цифровые технологии</span>
+                            </li>
+						                            <li class="product_menu__item ">
+                                <span class="product_menu__link " data-page="/catalog/retail/comparison">Сравнение версий</span>
+                            </li>
+						                    </ul>
+                </nav>
+			        </div>
+                            <div class="content">
+            
+<!-- tab-content --><div class="product_content">
+    <div class="product_descr">
+        <div class="txt_block formatted">
+			<p>
+	 Решение предназначено для автоматизации торговой деятельности магазинов и других розничных торговых точек, в том числе объединенных в торговую сеть.
+</p>
+<p>
+	 «1С:Розница»&nbsp;— универсальное решение для управления розничной торговлей. Полностью автоматизирует все основные бизнес-процессы как отдельного магазина, так и&nbsp;крупной розничной сети. Позволяет организовать эффективное управление продажами и&nbsp;закупками, запасами и&nbsp;складом, персоналом магазина, ассортиментом и&nbsp;ценообразованием, маркетинговыми акциями и&nbsp;системами лояльности. Автоматизирует рабочее место кассира. Обеспечивает оперативное формирование отчетов для мониторинга и&nbsp;анализа показателей работы торговых точек.
+</p>
+<h3>Преимущества «1С:Розница»</h3>
+<ul>
+<li>Универсальность </li>
+<ul>
+	<li>Подходит для управления розничными продажами в&nbsp;компаниях любого масштаба и&nbsp;любой сферы торговли.</li>
+	<li>Позволяет регистрировать практически все операции, связанные с&nbsp;приемкой, перемещением, продажей и&nbsp;возвратом товара.</li>
+	<li>Поддерживает работу практически со&nbsp;всеми видами подключаемого торгового оборудования: онлайн-кассами, сканерами штрих-кодов, терминалами сбора данных, принтерами этикеток, эквайринговыми терминалами и&nbsp;т.&nbsp;п.</li>
+</ul>
+<li>Простая и&nbsp;удобная работа</li>
+<ul>
+	<li>Функционал программы легко настраивается в&nbsp;соответствии с&nbsp;принятой в&nbsp;конкретной компании методикой управления ассортиментом и&nbsp;ценообразованием, системой скидок, способом оформления складских операций и&nbsp;розничных продаж, другими особенностями работы магазинов и&nbsp;потребностей пользователей.</li>
+</ul>
+<li>Интеграция без границ</li>
+<ul>
+	<li>Соответствие требованиям <nobr>54-ФЗ,</nobr> интеграция с&nbsp;ЕГАИС 3.0, ФГИС «Меркурий», НСЦМ «Честный знак» и&nbsp;другими государственными информационными системами.</li>
+	<li>Можно использовать автономно, в&nbsp;т.&nbsp;ч.в качестве кассовой программы, или в&nbsp;качестве бэк-офиса под управлением системы «1С:Управление торговлей» или «1С:Управление нашей фирмой». Легко интегрируется с&nbsp;«1С:Бухгалтерия» и&nbsp;«<a href="https://v8.1c.ru/1s-kassa/">1С:Мобильная касса</a>».</li>
+</ul>
+<li>Поддержка и&nbsp;сопровождение</li>
+<ul>
+	<li>Открытость и&nbsp;системы и&nbsp;легкость ее&nbsp;адаптации, широкие возможности масштабирования и&nbsp;интеграции, простота и&nbsp;удобство администрирования и&nbsp;поддержки.</li>
+	<li>Консультации и&nbsp;сопровождение&nbsp;— по&nbsp;первому требованию, в&nbsp;т.&nbsp;ч.&nbsp;от&nbsp;сертифицированных Центров компетенции 1С&nbsp;по&nbsp;<nobr>54-ФЗ.</nobr> Учебные материалы, презентации и&nbsp;видеоролики с&nbsp;подробным разбором функций&nbsp;— в&nbsp;любой момент.</li>
+</ul></ul>        </div>
+                    <div class="mt40">
+                <p>
+                                            <a class="btn btn_light_outline link mb16 mr16" href="/catalog/retail/features">Подробное описание</a>
+                                                                <a class="btn btn_light_outline link_down hide820 mb16" href="#publications">Публикации, внедрения, мероприятия</a>
+                                    </p>
+            </div>
+            </div>
+	        <section class="tile_beige mt24">
+            <header class="product_contacts__header">
+                                <h3 class="product_section__title">Информационные письма</h3>
+            </header>
+            <div class="product_contacts__content formatted clps_mobile">
+                                    <div class="product_contacts__info">
+                        <p class="product_contacts__responsible lh24">
+                            №23528 от 29.09.2017                                                        <br>
+                            <a target="_blank" href="https://1c.ru/news/info.jsp?id=23528">В продаже электронная поставка программы "1С:Розница 8. Базовая версия"</a>
+                        </p>
+                    </div>
+                                    <div class="product_contacts__info">
+                        <p class="product_contacts__responsible lh24">
+                            №22372 от 16.12.2016                                                        <br>
+                            <a target="_blank" href="https://1c.ru/news/info.jsp?id=22372">"1С:Розница 8" поддерживает новый порядок работы с контрольно-кассовой техникой в соответствии с 54-ФЗ</a>
+                        </p>
+                    </div>
+                                    <div class="product_contacts__info">
+                        <p class="product_contacts__responsible lh24">
+                            №8251 от 15.04.2008                                                        <br>
+                            <a target="_blank" href="https://1c.ru/news/info.jsp?id=8251">О выпуске продукта "1С:Розница 8"</a>
+                        </p>
+                    </div>
+                            </div>
+        </section>
+    </div><!-- tab-content -->
+
+                                    </div>                                                         <footer class="product_footer">
+			                <a href="/catalog/retail/buy" class="btn btn_orange btn_attn btn__product_footer__get">Приобрести</a>
+			        </footer>
+    <aside class="sidebar">
+
+	
+	<!--'start_frame_cache_fcb92d89d16db6736483e84b17fa365d'--><!--'end_frame_cache_fcb92d89d16db6736483e84b17fa365d'-->
+	<div class="product_summary">
+					<div class="product_type">
+				<div class="product_type__title">Типовой программный продукт 1С</div>
+				<div data-tip="Решение разработано и выпущено фирмой «1С»." class="_tip_initialize">
+					<svg><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_info"></use></svg>
+				</div>
+			</div>
+				<div class="product_info">
+							<div class="product_info__item">
+					<div class="product_info__title">Тип предприятий:</div>
+					<div class="product_info__descr">
+						Коммерческий					</div>
+				</div>
+			
+							<div class="product_info__item">
+					<div class="product_info__title">Подходит для стран:</div>
+					<div class="product_info__descr">
+						Россия					</div>
+				</div>
+			
+							<div class="product_info__item">
+					<div class="product_info__title">Версии:</div>
+					<div class="product_info__descr">
+						Базовая, ПРОФ					</div>
+				</div>
+			
+			                    <div class="product_info__item">
+                        <div class="product_info__title">Актуальный релиз:</div>
+                        <div class="product_info__descr">
+                            <div>
+                                                                    <a class="db" target="_blank" rel="nofollow" title="Для версии: Базовая, ПРОФ" href="https://releases.1c.ru/total?hideUnavailablePrograms=false">3.0.13.314 от 23.04.2026</a>
+                                                            </div>
+                            <div data-tip="Новое в версии, порядок обновления и дистрибутив публикуются на ресурсе 1С:Обновление программ. Материалы доступны после авторизации на Портале 1С:ИТС и при наличии официальной поддержки." class="_tip_initialize">
+                                <svg><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_info"></use></svg>
+                            </div>
+                        </div>
+                    </div>
+			    
+							<div class="product_info__item">
+					<div class="product_info__title">Разработчик:</div>
+					<div class="product_info__descr wbbw">
+												1С					</div>
+				</div>
+					</div>
+		<div class="product_suitable">
+
+							<div class="product_suitable__item">
+					<div class="product_suitable__title">Базовая конфигурация:</div>
+					<div class="product_suitable__descr">
+						Оригинальная					</div>
+				</div>
+			
+							<div class="product_suitable__item">
+					<div class="product_suitable__title">Подходит для отраслей:</div>
+					<div class="product_suitable__descr">
+													<a href="/trade">Торговля</a>					</div>
+				</div>
+			
+			
+					</div>
+	</div>
+
+	        <div class="workplaces">
+            <form class="ajax-form needs-validation product_workplaces__form _isu" novalidate="" data-action="/ajax/product/autochoice.php" data-modal-id="modal-autochoice">
+                <input type="hidden" name="ID" value="391">
+                <div class="range_wrap _irs">
+                    <div class="range_head">
+                        <span class="range_title">Кол-во рабочих мест</span>
+                        <input type="text" name="arms" class="range_input" value="10" autocomplete="off">
+                    </div>
+                    <div class="range_slider__wrap">
+                        <div class="range_slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" data-min="0" data-max="101" data-start="10"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.0990099, 1);"></div></div><div class="noUi-origin" style="transform: translate(-90.099%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="101.0" aria-valuenow="10.0" aria-valuetext="10.00"><div class="noUi-touch-area"></div></div></div></div></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn_grey">Рассчитать</button>
+            </form>
+        </div>
+	
+	<div class="sidebar_links mb16">
+					<a href="/catalog/retail/buy" class="btn btn_orange btn_tower btn_attn">
+				<span class="btn_txt__primary">Приобрести</span>
+				<span class="btn_txt__secondary">Электронную поставку</span>
+			</a>
+							<a href="/catalog/retail/franch" class="btn btn_orange_outline btn_tower">
+				<span class="btn_txt__primary">Заказать</span>
+				<span class="btn_txt__secondary">Внедрение у партнера</span>
+			</a>
+		
+		
+		
+		
+									<a href="/catalog/request-to-1c.php?mode=none&amp;product_id=1172" class="btn btn_beige_outline">Отправить запрос в 1С</a>
+						</div>
+
+			<div class="sidebar_phone tile_beige mt32">
+			<div class="sidebar_phone__title">
+				Сопровождение
+									<div data-tip="Техническую поддержку оказывает линия консультаций фирмы «1С»." class="_tip_initialize">
+						<svg><use xlink:href="/local/templates/sol23/build/svg/main.svg#icon_info"></use></svg>
+					</div>
+							</div>
+			<ul class="sidebar_phone__list">
+									<li>
+                        Телефон:
+                        <a href="tel:+74959561181" class="hidden_link">
+                            +7 (495) 956-11-81                                                    </a>
+                    </li>
+													<li>Эл. почта: <a href="mailto:v8@1c.ru">v8@1c.ru</a></li>
+											</ul>
+			<div class="sidebar_phone__btn">
+				<a href="/catalog/retail/support" class="btn btn_grey_light_outline">Поддержка</a>
+
+							</div>
+		</div>
+	
+	<!--'start_frame_cache_c408ea32179fcd9d827b4bf511ac5fbd'--><!--'end_frame_cache_c408ea32179fcd9d827b4bf511ac5fbd'--></aside>                    </article>
+                            <div class="section_news">
+            <span class="db wh1" id="publications" style="position: relative; top:-220px"></span>
+            <div class="news_list">
+				                    <section class="news_panel">
+                        <header class="news_header">
+                            <div class="news_title">Публикации о продукте</div>
+                        </header>
+                        <div class="news_content">
+							                                <div class="news_item">
+                                    <a href="/news/809972/" class="news_link">
+                                        <span class="news_item__date">21 марта 2018</span>
+                                        <span class="news_item__title">1С:Номенклатура - единый каталог товаров в 1С:Предприятии</span>
+                                    </a>
+                                </div>
+								                                <div class="news_item">
+                                    <a href="/news/124723/" class="news_link">
+                                        <span class="news_item__date">6 декабря 2016</span>
+                                        <span class="news_item__title">13 декабря 2016 года фирма "1С" совместно с Россельхознадзором и партнером "АСБК-софт", проводит семинар "Оформляем ветеринарные сопроводительные документы в ФГИС Меркурий с использованием "1С:Управление ветеринарными сертификатами"</span>
+                                    </a>
+                                </div>
+								                                <div class="news_item">
+                                    <a href="/news/124595/" class="news_link">
+                                        <span class="news_item__date">24 августа 2016</span>
+                                        <span class="news_item__title">Маркировка меховых изделий обязательна с 12 августа 2016 г. Поддержка в решениях 1С и рекомендации по работе в новых условиях</span>
+                                    </a>
+                                </div>
+								                        </div>
+						                            <footer class="news_footer">
+                                <a href="/news/?news_product_id=1172" class="btn btn_light_outline link">Все публикации</a>
+                            </footer>
+						                    </section>
+				
+				                    <section class="news_panel">
+                        <header class="news_header">
+                            <div class="news_title">Внедрения продукта</div>
+                        </header>
+                        <div class="news_content">
+							                                <div class="news_item">
+                                    <a href="/projects/1444369/" class="news_link">
+                                        <span class="news_item__date">21 апреля 2026</span>
+                                        <span class="news_item__title">Автоматизация оперативного учета на базе ПП «1С:Розница 8» у ИП Блинова Николая Дмитриевича</span>
+                                    </a>
+                                </div>
+							                                <div class="news_item">
+                                    <a href="/projects/1443518/" class="news_link">
+                                        <span class="news_item__date">16 апреля 2026</span>
+                                        <span class="news_item__title">Автоматизация оперативного учета на базе ПП "1С:Розница 8" у ИП Селина Олега Юрьевича</span>
+                                    </a>
+                                </div>
+							                                <div class="news_item">
+                                    <a href="/projects/1442464/" class="news_link">
+                                        <span class="news_item__date">14 апреля 2026</span>
+                                        <span class="news_item__title">Автоматизация оперативного учета на базе ПП «1С:Розница 8» в ООО "Главмехэлектро"</span>
+                                    </a>
+                                </div>
+							                        </div>
+                        <footer class="news_footer">
+                            <a href="/projects/?project_product_id=1172" class="btn btn_light_outline link">Все внедрения</a>
+                        </footer>
+                    </section>
+				
+				            </div>
+        </div>
+	                </main>
+        </div>     </div>     <footer class="footer_main">
+        <div class="container">
+            <div class="site_info">
+                <div class="site_info__logo">
+                    <svg class="icon_logo"><use xlink:href="/local/templates/sol23/build/svg/main.svg#logo"></use></svg>
+                </div>
+                <div class="site_info__name">
+                    Отраслевые<br> и специализированные решения<br> <span class="c_dark_grey">1С:Предприятие</span>
+                </div>
+            </div>
+
+            <div class="footer_links">
+                <div class="sites">
+                    <div class="sites_title">Другие сайты 1С</div>
+                    <div class="select_wrap">
+                        <select class="sites_select">
+                            <option value="https://1c.ru/">www.1c.ru</option>
+                            <option value="https://v8.1c.ru/">1С:Предприятие 8</option>
+                            <option value="https://its.1c.ru/">ИТС.1C.ru</option>
+                            <option value="https://www.buh.ru/">БУХ.1С.ru</option>
+                            <option value="https://1c.link/">1С:Линк</option>
+                            <option value="https://consulting.1c.ru/">1С:Консалтинг</option>
+                            <option value="https://1cbo.ru/">1С:БухОбслуживание</option>
+                            <option value="https://club.1c.ru/">1С:Клуб программистов</option>
+                            <option value="https://obrazovanie.1c.ru">1С:Образование</option>
+                            <option value="https://uc1.1c.ru/type/video">Видеокурсы 1С</option>
+                            <option value="https://cloud.1c.ru">1С:Облако</option>
+                            <option value="https://dist.1c.ru">1С:Дистрибьюция</option>
+                            <option value="https://1csoft.ru">1Софт</option>
+                            <option value="https://online.1c.ru">1С-Онлайн</option>
+                            <option value="https://www.1c-interes.ru">1С Интерес</option>
+                            <option value="https://obr.1c.ru">Образовательные программы</option>
+                            <option value="https://www.softclub.ru">1С:Игры</option>
+                            <option value="https://torg.1c.ru">torg.1c.ru</option>
+                            <option value="https://mobile.1c.ru">1С в мобильном</option>
+                            <option value="https://1c-prosto.ru">1C-Просто</option>
+                            <option value="https://1c.market/p/about-service">1С:Бизнес-сеть. Торговая площадка</option>
+                            <option value="https://sovmestimo.1c.ru">Дистрибьюция 1С:Совместимо</option>
+                        </select>
+                    </div>
+                </div>
+
+                <nav class="nav_main">
+                    <ul class="nav_main__list">
+                        <li class="nav_main__item">
+                            <a href="/catalog/">Каталог</a>
+                        </li>
+                        <li class="nav_main__item">
+                            <a href="/projects/">Внедрения</a>
+                        </li>
+                        <li class="nav_main__item">
+                            <a href="/news/">Публикации</a>
+                        </li>
+                        <li class="nav_main__item">
+                            <a href="/events/">Мероприятия</a>
+                        </li>
+                        <li class="nav_main__item">
+                            <a href="/franch/">Партнеры</a>
+                        </li>
+                        <li class="nav_main__item">
+                            <a href="/forum/">Форум</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="nav_sub">
+                    <ul class="nav_sub__list">
+                        <li class="nav_sub__item">
+                            <a href="/about/">О сайте</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/about-products/">О решениях 1С</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/price/">Прайс-лист</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/its/">Поддержка</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/feedback/">Обратная связь</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/error-report/">Сообщить об ошибке</a>
+                        </li>
+                        <li class="nav_sub__item">
+                            <a href="/map/">Карта сайта</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="qrcode">
+                    <div class="qrcode_title">Мы в Telegram</div>
+                    <div class="qrcode_img">
+                        <a href="https://t.me/+vIwJAnHTsHk3ZTQy" target="_blank">
+                            <img class="lazy" loading="lazy" data-src="/upload/qrcode_tg.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <p class="copyright">© 2011-2026 АО «Группа 1С» (правопреемник ООО «1С»). Все права защищены. <a href="mailto:websol@1c.ru">websol@1c.ru</a></p>
+            </div>
+        </div>
+    </footer>
+        <noscript><div><img src="https://mc.yandex.ru/watch/46306794" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <button type="button" class="move_up">
+        <span class="move_up__txt">Наверх</span>
+        <span class="move_up__circle"></span>
+    </button>
+    <script src="/local/templates/sol23/build/js/main.min.js?1774260777"></script>
+    <script src="/local/templates/sol23/js/utils.js?1774260777"></script>
+    
+
+</body></html>
