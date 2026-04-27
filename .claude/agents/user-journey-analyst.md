@@ -31,23 +31,23 @@ Pick the right tool. Try in this order:
 
 - **Path A — local `agent-browser` (default for local Claude Code)** — fastest, supports clicks, screenshots, network/console capture, Web Vitals. Use for any reachable public site.
 - **Path B — Browserbase MCP (`mcp__browserbase__*`)** — use when the local IP is geo-blocked or you need a proxied/persistent cloud session. Tools: `start`, `navigate`, `act`, `observe`, `extract`, `end`. Proxy country is set in the user's Browserbase project, not at MCP level.
-- **Path C — GitHub Actions relay (cloud Claude Code only)** — multi-step flows are limited via this path because each step is a separate `curl` (no clicks, no JS rendering, no session). Use it only when the flow's steps are reachable as plain GET URLs (e.g. `/signup`, `/pricing`, `/checkout`) — fine for many marketing/SaaS audits. For each step:
-  1. Drop `requests/<timestamp>-<slug>-stepNN.json` with the step URL.
-  2. Wait for `samples/<slug>/stepNN/page.html` + `status.json` to appear.
-  3. Read and analyze.
-  
-  If the flow requires real clicks (e.g. JS-driven multi-step forms), stop and report that this path can't cover it — recommend Path A or B.
+- **Path C — GitHub Actions relay (cloud Claude Code only)** — full multi-step support via Playwright. Drop one request file with a `steps[]` array and the runner drives the whole scenario in a single browser session. Schema and full action list are in `CAPTURE-GUIDE.md`. Mechanism:
+  1. Compose `requests/<timestamp>-<slug>.json` with `url`, `slug`, and `steps`. Available actions: `click`, `fill`, `press`, `wait_for_selector`, `wait_for_navigation`, `wait_for_load`, `wait_timeout`, `navigate`, `screenshot`, `scroll`, `scroll_to_bottom`, `eval`. Each step gets an auto-screenshot (suppress with `"screenshot": false`); add `"continue_on_error": true` to keep walking past a failed step.
+  2. For authed flows: pass `cookies[]` to seed a session, or `storage_state` (paste JSON from a previous run). Set `"save_storage_state": true` on the first run to capture the post-login state for reuse.
+  3. For bot-protected sites: set `"engine": "stealth"` plus a realistic `user_agent`, `locale`, `timezone`.
+  4. Push triggers `.github/workflows/fetch-page.yml`. Poll `samples/<slug>/status.json` via `mcp__github__get_file_contents` until `ok: true`. Output: `step-NN-<action>.png` per step, `status.json.steps[]` with per-step ok/error, plus final `page.html`. Always verify `challenged: false` first.
+  5. Path C is one-shot — you cannot iterate clicks based on what mid-session DOM looks like. If the flow needs adaptive decisions (e.g. handle a captcha, choose between branches based on visible text), use Path A or B instead.
 - **Path D — manual capture** — ask the user to walk the flow themselves and paste the HTML of each step. Last resort.
 
 If all paths fail, stop and report what got captured. Do not invent step results.
 
 For every step (whichever tool you use):
 
-- Capture a screenshot (desktop 1440px). Capture mobile 390px for any step that is form-heavy or pricing-related.
+- Capture a screenshot (desktop 1440px). Capture mobile 390px for any step that is form-heavy or pricing-related. (Path C skips the mobile pass when `steps[]` is present — issue a separate mobile request if mobile parity matters for that step.)
 - Record the URL, page title, primary CTA label, and any error / validation messages.
-- Time each step (load + interaction).
+- Time each step (load + interaction). Path C surfaces page-level vitals via `status.json.vitals` (LCP/CLS/FCP/TTFB) when `collect_vitals: true` is set on the request.
 - Note every required field, every confusing label, every redirect, every email gate.
-- If a step fails or loops, do not work around it — record it as a finding.
+- If a step fails or loops, do not work around it — record it as a finding. On Path C the failed step shows `ok: false` in `status.json.steps[]`; that's the evidence to cite.
 
 Save evidence under `./reports/user-journey/<slug>/step-NN-<name>/`.
 

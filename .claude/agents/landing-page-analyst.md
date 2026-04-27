@@ -25,11 +25,12 @@ Pick the right capture tool. Try in this order until one succeeds:
 
 - **Path A — local `agent-browser` (default for local Claude Code)** — fast, gives screenshots + clicks + Web Vitals + accessibility tree. Use when running locally and the target is reachable.
 - **Path B — Browserbase MCP (`mcp__browserbase__*`)** — use when the page geo-blocks the local IP, when local capture fails, or when the user asked for proxied capture. Country is set in the user's Browserbase project (e.g. RU pool in the dashboard for Russian sites). Flow: `start` → `navigate` → `extract` / `observe` → `end`.
-- **Path C — GitHub Actions relay (default for cloud Claude Code)** — use when running in cloud Claude Code (claude.ai/code), where the sandbox blocks all outbound traffic except github.com / npm / api.anthropic.com. Mechanism:
-  1. Create `requests/<timestamp>-<slug>.json` with `{url, slug}` using `mcp__github__create_or_update_file`.
-  2. Push triggers `.github/workflows/fetch-page.yml` which curls the URL from a normal datacenter IP and commits the HTML to `samples/<slug>/page.html` + `samples/<slug>/status.json`.
-  3. Poll for `samples/<slug>/status.json` via `mcp__github__get_file_contents` (every ~15s, up to 3 minutes). When `ok: true` appears, fetch `samples/<slug>/page.html`.
-  4. Parse the HTML and use it as the captured page. No screenshots / mobile / Web Vitals via this path — flag those gaps in the report.
+- **Path C — GitHub Actions relay (default for cloud Claude Code)** — use when running in cloud Claude Code (claude.ai/code), where the sandbox blocks all outbound traffic except github.com / npm / api.anthropic.com. Mechanism (full schema in `CAPTURE-GUIDE.md`):
+  1. Create `requests/<timestamp>-<slug>.json` with at least `{url, slug, collect_vitals: true}` using `mcp__github__create_or_update_file`. Add `"engine": "stealth"` and a realistic `user_agent`/`locale`/`timezone` if the site uses DataDome / Cloudflare / Akamai.
+  2. Push triggers `.github/workflows/fetch-page.yml`, which runs Playwright headless Chromium on a runner outside the sandbox, executes JS challenges, and commits to `samples/<slug>/`: `page.html`, `status.json`, `desktop-{above-fold,full}.png`, `mobile-{above-fold,full}.png`.
+  3. Poll `samples/<slug>/status.json` via `mcp__github__get_file_contents` (every ~15s, up to 3 minutes). Always check `ok: true && challenged: false` before reading the HTML — `challenged: true` means a bot wall, retry with `engine: stealth`.
+  4. `status.json.vitals` carries LCP / CLS / FCP / TTFB when `collect_vitals: true` was set. Use these in the Performance section of the report.
+  5. Push multiple request files in one commit to capture a competitor matrix in parallel (default 3 workers, controlled by repo variable `FETCH_CONCURRENCY`).
 - **Path D — manual paste** — last resort. Ask the user to open the page in their browser, view source, paste the HTML into the chat. Only use when A, B, C all unavailable.
 
 If everything fails, stop and tell the user which path failed and why. Do not fabricate page content.
@@ -39,7 +40,7 @@ Minimum captures regardless of tool:
 - Desktop 1440px viewport: above-the-fold screenshot + full-page screenshot.
 - Mobile 390px viewport: above-the-fold + full-page.
 - Accessibility-tree snapshot (for headings, landmarks, CTA labels).
-- Network/console: obvious errors, blocking requests, and the LCP element. (Not available via Browserbase MCP — note this gap if you used it.)
+- Network/console: obvious errors, blocking requests, and the LCP element. Browserbase MCP does not expose network logs — note that gap if you used it. Path C exposes vitals (LCP/CLS/FCP/TTFB) via `status.json.vitals` but not full network/console traces.
 - If the page has an obvious primary CTA, click it once and capture the next step (so the audit covers the first transition, not just the page).
 
 Save artifacts under `./reports/landing-page/<slug>/` so the user can see them.
