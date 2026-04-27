@@ -1,0 +1,8 @@
+{
+  "url": "https://kontur.ru/market/price/",
+  "slug": "kontur-price",
+  "engine": "playwright",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "collect_vitals": true
+}

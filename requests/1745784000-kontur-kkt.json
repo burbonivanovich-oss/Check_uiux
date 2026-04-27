@@ -1,0 +1,8 @@
+{
+  "url": "https://kontur.ru/market/kkt",
+  "slug": "kontur-kkt",
+  "engine": "playwright",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "collect_vitals": true
+}
