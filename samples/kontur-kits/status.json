@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/kits",
+  "slug": "kontur-kits",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:00.232Z",
+  "http_status": 200,
+  "size_bytes": 220520,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 2280,
+    "cls": 0,
+    "fcp": 2280,
+    "ttfb": 370,
+    "dom_content_loaded": 2074,
+    "load": 4808
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/kits",
+      "duration_ms": 19100,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

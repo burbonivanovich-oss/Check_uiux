@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/price-gossistemy",
+  "slug": "kontur-price-gossistemy",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:39.075Z",
+  "http_status": 200,
+  "size_bytes": 185525,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 1996,
+    "cls": 0,
+    "fcp": 1996,
+    "ttfb": 268,
+    "dom_content_loaded": 1712,
+    "load": 3001
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/price-gossistemy",
+      "duration_ms": 6184,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

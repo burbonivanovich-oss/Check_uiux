@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/kkt",
+  "slug": "kontur-kkt",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:37.717Z",
+  "http_status": 200,
+  "size_bytes": 263765,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 2116,
+    "cls": 0,
+    "fcp": 2116,
+    "ttfb": 497,
+    "dom_content_loaded": 1803,
+    "load": 3179
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/kkt",
+      "duration_ms": 7794,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

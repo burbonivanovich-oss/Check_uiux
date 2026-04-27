@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/ofd-directoru",
+  "slug": "kontur-ofd-directoru",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:38.110Z",
+  "http_status": 200,
+  "size_bytes": 193909,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 1756,
+    "cls": 0,
+    "fcp": 1756,
+    "ttfb": 235,
+    "dom_content_loaded": 1553,
+    "load": 3370
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/ofd-directoru",
+      "duration_ms": 8047,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

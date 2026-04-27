@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/fn",
+  "slug": "kontur-fn",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:00.229Z",
+  "http_status": 200,
+  "size_bytes": 206447,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 2156,
+    "cls": 0,
+    "fcp": 2156,
+    "ttfb": 294,
+    "dom_content_loaded": 1955,
+    "load": 4171
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/fn",
+      "duration_ms": 18985,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}
