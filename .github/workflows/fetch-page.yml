@@ -63,13 +63,18 @@ jobs:
             '{url: $url, slug: $slug, engine: "playwright"}' \
             > "requests/${ts}-${SLUG}.json"
 
-      - name: Install Playwright + Chromium
+      - name: Install Playwright + stealth + Chromium
         run: |
           npm init -y >/dev/null
-          npm install --no-save playwright@^1.49.0
+          npm install --no-save \
+            playwright@^1.49.0 \
+            playwright-extra@^4.3.6 \
+            puppeteer-extra-plugin-stealth@^2.11.2
           npx playwright install --with-deps chromium
 
       - name: Process pending requests
+        env:
+          FETCH_CONCURRENCY: ${{ vars.FETCH_CONCURRENCY || '3' }}
         run: node scripts/fetch.mjs
 
       - name: Commit results
