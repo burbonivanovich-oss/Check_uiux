@@ -143,8 +143,9 @@ samples/<slug>/
 ├── desktop-full.png                # full page
 ├── mobile-above-fold.png           # iPhone 14 (skipped when steps present)
 ├── mobile-full.png                 # iPhone 14 full page (skipped when steps present)
-├── step-NN-<action>.png            # one per executed step
-└── storage_state.json              # saved auth state (when requested)
+├── step-00-initial.png             # snapshot before scenario runs (only when steps present)
+├── step-NN-<name-or-action>.png    # one per executed step (auto unless `screenshot: false`)
+└── storage_state.json              # saved auth state (auto when steps present, or save_storage_state: true)
 ```
 
 `status.json` shape:
@@ -153,25 +154,33 @@ samples/<slug>/
 {
   "url": "https://...",
   "slug": "...",
-  "engine": "playwright",
+  "engine": "playwright",         // or "stealth", or
+                                  // "playwright (stealth requested but unavailable)"
   "fetched_at": "2026-04-26T04:27:50.818Z",
   "http_status": 200,
   "size_bytes": 292807,
   "challenged": false,            // true = bot wall (DataDome / Cloudflare / Akamai)
-  "vitals": {                     // present when collect_vitals: true
-    "lcp_ms": 1820,
-    "cls": 0.04,
-    "fcp_ms": 1100,
-    "ttfb_ms": 240
-  },
-  "steps": [                      // present when steps[] is given
-    {"idx": 0, "action": "click", "ok": true, "screenshot": "step-01-click.png"},
-    {"idx": 1, "action": "fill",  "ok": true, "screenshot": "step-02-fill.png"}
-  ],
   "error": null,
-  "ok": true
+  "ok": true,
+  "vitals": {                     // null if collect_vitals: false or page was challenged
+    "lcp": 1820,                  // ms
+    "cls": 0.04,
+    "fcp": 1100,                  // ms
+    "ttfb": 240,                  // ms
+    "dom_content_loaded": 1450,
+    "load": 2900
+  },
+  "steps": [                      // always present; first entry is the initial goto
+    {"step": 0, "action": "goto", "url": "...", "duration_ms": 1820, "http_status": 200, "challenged": false},
+    {"step": 1, "action": "click", "selector": "...", "duration_ms": 320, "error": null, "url_after": "..."},
+    {"step": 2, "action": "fill",  "selector": "...", "duration_ms": 80,  "error": null, "url_after": "..."}
+  ]
 }
 ```
+
+`ok: true` requires `http_status === 200`, `size_bytes > 1000`, no error, not
+challenged, and no failed step. Per-step success is `error === null`. Failed
+steps stop the run unless the step had `"continue_on_error": true`.
 
 **Always check `ok: true` and `challenged: false` before reading `page.html`.**
 If `challenged: true`, retry with `"engine": "stealth"`. If still blocked, the

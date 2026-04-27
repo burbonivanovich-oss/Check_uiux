@@ -85,9 +85,14 @@ samples/<slug>/
 ├── desktop-full.png                # full page
 ├── mobile-above-fold.png           # iPhone 14 first viewport (skipped when steps present)
 ├── mobile-full.png                 # iPhone 14 full page (skipped when steps present)
-├── step-NN-<action>.png            # one per executed step (when steps are present)
+├── step-00-initial.png             # snapshot before scenario runs (only when steps present)
+├── step-NN-<name-or-action>.png    # one per executed step (uses `name` if set)
 └── storage_state.json              # saved auth state (when save_storage_state or steps used)
 ```
+
+`status.json.steps[]` shape: `{ step, action, selector?, name?, duration_ms,
+error, url_after, ... }`. The first entry is always the initial `goto`
+(`step: 0`). A step succeeded if `error === null`.
 
 ## Concurrency
 
