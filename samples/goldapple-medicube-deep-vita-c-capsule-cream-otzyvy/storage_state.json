@@ -1,0 +1,311 @@
+{
+  "cookies": [
+    {
+      "name": "ngx_s_id",
+      "value": "ZThiNzg1MDMtM2QyMy00MTFiLWE1Y2UtMWU3OWZkM2RmNWY4QDE3NzczNTgzNjEzMTNAOTAwMDAwQDE3NzczNTgzNjEzMTNAZmNjNDhjOTI1MjNiYWVlNTIzN2ZlOTBmNTE4NzgwOGRjZmQwM2MxOTA1YzYyZDhhZmMwODNlNTAzNWRiMTE3Yw==",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894361.391764,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "ga-gun-init",
+      "value": "true",
+      "domain": "goldapple.ru",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "bh",
+      "value": "EkIiR29vZ2xlIENocm9tZSI7dj0iMTQ3IiwgIiBOb3Q7QSBCcmFuZCI7dj0iOTkiLCAiQ2hyb21pdW0iO3Y9IjE0NyIqAj8wOgkiV2luZG93cyJgmazBzwZqHtzK4f8IktihsQOfz+HqA/v68OcN6//99g/Uss+HCA==",
+      "domain": ".yandex.ru",
+      "path": "/",
+      "expires": 1811918362.127744,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ym_uid",
+      "value": "1777358362675468374",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ym_d",
+      "value": "1777358362",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sync_cookie_csrf",
+      "value": "1871927251fake",
+      "domain": ".mc.yandex.com",
+      "path": "/",
+      "expires": 1777358962,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ym_isad",
+      "value": "2",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1777430362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "gsscw-goldapple",
+      "value": "nSp/Mfcq7hnADEJzNq8m5/2LQ39ipv3tokfo2f4poIQaIwxC+94RDY8G9pav5VOrnZQY4uMHq+7Zr7HAM9qz5vxqdAXBlupt0ywMWfGI+EDF4+QHc6zQ5kiQP/IHIErb9NKinCcf5tRInlKLwjjrZ/DYZbLL4hnppQoQo1LD6zvbD4Taxujuy3TcS+H/BZe2h8KNUY4MCJ9jRHZuKJyOazGz638MnXO1jWt9ceKW4AzgODgMcDvZM/DWMw202M7THxmzUZWKNF1pR+9TFT1XYpeKG1Y9wHWJzTTE3A==",
+      "domain": "goldapple.ru",
+      "path": "/",
+      "expires": 1808894362.604074,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "cfidsw-goldapple",
+      "value": "o3NQg1mDp6IuWJGaFPXzryQsU7Zbif5imEK3rhEMoZi0EZauLw46YMARRQDqmOaOMWDCvzITlRKhj66TBPTigYYnVjrYeDm3+07SNgPVevIMyQtSW/LaUdM7n4agju2hGELxKDPLPKV0XebB17c+lwA2GGj9n7nR4/t/",
+      "domain": "goldapple.ru",
+      "path": "/",
+      "expires": 1808894362.604149,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "cfidsw-goldapple",
+      "value": "o3NQg1mDp6IuWJGaFPXzryQsU7Zbif5imEK3rhEMoZi0EZauLw46YMARRQDqmOaOMWDCvzITlRKhj66TBPTigYYnVjrYeDm3+07SNgPVevIMyQtSW/LaUdM7n4agju2hGELxKDPLPKV0XebB17c+lwA2GGj9n7nR4/t/",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "gsscw-goldapple",
+      "value": "nSp/Mfcq7hnADEJzNq8m5/2LQ39ipv3tokfo2f4poIQaIwxC+94RDY8G9pav5VOrnZQY4uMHq+7Zr7HAM9qz5vxqdAXBlupt0ywMWfGI+EDF4+QHc6zQ5kiQP/IHIErb9NKinCcf5tRInlKLwjjrZ/DYZbLL4hnppQoQo1LD6zvbD4Taxujuy3TcS+H/BZe2h8KNUY4MCJ9jRHZuKJyOazGz638MnXO1jWt9ceKW4AzgODgMcDvZM/DWMw202M7THxmzUZWKNF1pR+9TFT1XYpeKG1Y9wHWJzTTE3A==",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fgsscw-goldapple",
+      "value": "a4pf7ef182c2e2cb72b7ae0b91c43f413f4d3a64",
+      "domain": ".goldapple.ru",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sync_cookie_csrf",
+      "value": "3920894223fake",
+      "domain": ".mc.yandex.ru",
+      "path": "/",
+      "expires": 1777358962,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "yabs-sid",
+      "value": "805063561777358362",
+      "domain": "mc.yandex.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "i",
+      "value": "uAFAWfn9V+55c4ENpr72hwwtQFTPX8j3IbeROoExSvAkECXurIdSiblel9KgwNQlPenKA9perx2l+o3kJEvEGMG3yo4=",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1811918362.981947,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "yandexuid",
+      "value": "3763529831777358362",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1811918362.981994,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "yuidss",
+      "value": "3763529831777358362",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ymex",
+      "value": "1808894362.yrts.1777358362#1808894362.yrtsi.1777358362",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "receive-cookie-deprecation",
+      "value": "1",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1808894362,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://goldapple.ru",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "bh",
+      "value": "EkIiR29vZ2xlIENocm9tZSI7dj0iMTQ3IiwgIiBOb3Q7QSBCcmFuZCI7dj0iOTkiLCAiQ2hyb21pdW0iO3Y9IjE0NyIaA3g4NiINMTQ3LjAuNzcyNy4xNSoCPzA6CSJXaW5kb3dzIkIEMTAuMEoCNjRSWSJIZWFkbGVzc0Nocm9tZSI7dj0iMTQ3LjAuNzcyNy4xNSIsIk5vdC5BL0JyYW5kIjt2PSI4LjAuMC4wIiwiQ2hyb21pdW0iO3Y9IjE0Ny4wLjc3MjcuMTUiYJuswc8Gah7cyuH/CJLYobEDn8/h6gP7+vDnDev//fYP1LLPhwg=",
+      "domain": ".yandex.com",
+      "path": "/",
+      "expires": 1811918363,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sync_cookie_csrf_secondary",
+      "value": "999157801fake",
+      "domain": ".mc.yandex.com",
+      "path": "/",
+      "expires": 1777358963,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sync_cookie_csrf_secondary",
+      "value": "360974580fake",
+      "domain": ".mc.yandex.ru",
+      "path": "/",
+      "expires": 1777358963,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sync_cookie_ok_secondary",
+      "value": "synced",
+      "domain": ".mc.yandex.com",
+      "path": "/",
+      "expires": 1777444763,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "yandexuid",
+      "value": "3763529831777358362",
+      "domain": ".yandex.ru",
+      "path": "/",
+      "expires": 1811918363.696322,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "yuidss",
+      "value": "3763529831777358362",
+      "domain": ".yandex.ru",
+      "path": "/",
+      "expires": 1811918363.6964,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "i",
+      "value": "uAFAWfn9V+55c4ENpr72hwwtQFTPX8j3IbeROoExSvAkECXurIdSiblel9KgwNQlPenKA9perx2l+o3kJEvEGMG3yo4=",
+      "domain": ".yandex.ru",
+      "path": "/",
+      "expires": 1811918363.696434,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "gcfids",
+      "value": "Mgjf57KKVf0Q5dG7lud67o0ihhkw2V01hWnr6iwhs2D7czpDmwXEGJTtzk69v8lZL0HmcRi3ngqtsz7qjwK54oWVJOv6go+U6FcJoXLaR3fkXuVDm-fybdVbNw6DEGO5zpEsctw-L15uhSqIl1RJQeGHjDVh4OUK--fu4adUOGB9wT6L+I1XILs6",
+      "domain": ".id.facct.ru",
+      "path": "/",
+      "expires": 1808894366.186586,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://goldapple.ru",
+      "localStorage": [
+        {
+          "name": "__gitd",
+          "value": "MDA0dC0iD2k5IVB2GApFSE5PMyhXQXt1Fy9LICglLS8PaTlaI0VdTQkoHBN/cyxYCxBjRTNC5BtGhw=="
+        },
+        {
+          "name": "_ym_synced",
+          "value": "{\"com\":29622639}"
+        },
+        {
+          "name": "_ym_uid",
+          "value": "\"1777358362675468374\""
+        },
+        {
+          "name": "_ym_retryReqs",
+          "value": "{}"
+        },
+        {
+          "name": "_ym102707039:0_reqNum",
+          "value": "1"
+        },
+        {
+          "name": "cfidsw-goldapple",
+          "value": "o3NQg1mDp6IuWJGaFPXzryQsU7Zbif5imEK3rhEMoZi0EZauLw46YMARRQDqmOaOMWDCvzITlRKhj66TBPTigYYnVjrYeDm3+07SNgPVevIMyQtSW/LaUdM7n4agju2hGELxKDPLPKV0XebB17c+lwA2GGj9n7nR4/t/"
+        },
+        {
+          "name": "_ym102707039_lsid",
+          "value": "1762784259858"
+        }
+      ]
+    }
+  ]
+}
