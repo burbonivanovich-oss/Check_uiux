@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-ts-piot-podklyuchenie-instrukciya",
+  "slug": "etiketka-art-podklyuchenie",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:35:04.782Z",
+  "http_status": 200,
+  "size_bytes": 44470,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 496,
+    "cls": 0.0006,
+    "fcp": 496,
+    "ttfb": 43,
+    "dom_content_loaded": 434,
+    "load": 1925
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-ts-piot-podklyuchenie-instrukciya",
+      "duration_ms": 5434,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

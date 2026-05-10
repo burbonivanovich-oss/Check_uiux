@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-kalendar-markirovki-2026",
+  "slug": "etiketka-art-kalendar-blog",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:35:36.657Z",
+  "http_status": 200,
+  "size_bytes": 41237,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 296,
+    "cls": 0.0009,
+    "fcp": 296,
+    "ttfb": 4,
+    "dom_content_loaded": 213,
+    "load": 7167
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-kalendar-markirovki-2026",
+      "duration_ms": 16184,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

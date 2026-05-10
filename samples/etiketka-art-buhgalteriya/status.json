@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-onlayn-buhgalteriya-2026",
+  "slug": "etiketka-art-buhgalteriya",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:36:09.053Z",
+  "http_status": 200,
+  "size_bytes": 48448,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 224,
+    "cls": 0.0009,
+    "fcp": 224,
+    "ttfb": 2,
+    "dom_content_loaded": 184,
+    "load": 0
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-onlayn-buhgalteriya-2026",
+      "duration_ms": 17198,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

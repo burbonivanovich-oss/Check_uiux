@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-proverki-2026",
+  "slug": "etiketka-art-proverki",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:35:04.781Z",
+  "http_status": 200,
+  "size_bytes": 44602,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 508,
+    "cls": 0.0009,
+    "fcp": 460,
+    "ttfb": 46,
+    "dom_content_loaded": 431,
+    "load": 1923
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-proverki-2026",
+      "duration_ms": 5453,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

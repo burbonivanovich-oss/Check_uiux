@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-ofd-dlya-ts-piot",
+  "slug": "etiketka-art-ofd",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:35:37.797Z",
+  "http_status": 200,
+  "size_bytes": 52028,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 240,
+    "cls": 0.0008,
+    "fcp": 220,
+    "ttfb": 28,
+    "dom_content_loaded": 196,
+    "load": 6681
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-ofd-dlya-ts-piot",
+      "duration_ms": 17208,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

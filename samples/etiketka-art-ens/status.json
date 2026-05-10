@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-ens-enp-uvedomleniya",
+  "slug": "etiketka-art-ens",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:35:22.728Z",
+  "http_status": 200,
+  "size_bytes": 45249,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 280,
+    "cls": 0.0009,
+    "fcp": 260,
+    "ttfb": 33,
+    "dom_content_loaded": 244,
+    "load": 1467
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-ens-enp-uvedomleniya",
+      "duration_ms": 4876,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}
