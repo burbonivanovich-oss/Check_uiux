@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/about",
+  "slug": "etiketka-about",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:07:21.316Z",
+  "http_status": 200,
+  "size_bytes": 13619,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 144,
+    "cls": 0.0008,
+    "fcp": 144,
+    "ttfb": 14,
+    "dom_content_loaded": 130,
+    "load": 1318
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/about",
+      "duration_ms": 4642,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

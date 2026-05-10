@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/slovar",
+  "slug": "etiketka-slovar",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:07:20.737Z",
+  "http_status": 200,
+  "size_bytes": 109068,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 192,
+    "cls": 0.0011,
+    "fcp": 192,
+    "ttfb": 20,
+    "dom_content_loaded": 172,
+    "load": 1320
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/slovar",
+      "duration_ms": 4650,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

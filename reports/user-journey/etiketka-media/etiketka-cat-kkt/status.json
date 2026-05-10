@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/category/kkt",
+  "slug": "etiketka-cat-kkt",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:07:48.072Z",
+  "http_status": 200,
+  "size_bytes": 20382,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 184,
+    "cls": 0.0036,
+    "fcp": 184,
+    "ttfb": 17,
+    "dom_content_loaded": 144,
+    "load": 1428
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/category/kkt",
+      "duration_ms": 4810,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}
