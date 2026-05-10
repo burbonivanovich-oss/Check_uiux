@@ -1,0 +1,20 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen",
+  "slug": "goldapple-medicube-collagen-retry",
+  "engine": "stealth",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  "accept_language": "ru-RU,ru;q=0.9,en;q=0.8",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "save_storage_state": true,
+  "steps": [
+    {"action": "wait_timeout", "ms": 8000},
+    {"action": "screenshot", "name": "after-8s"},
+    {"action": "navigate", "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen"},
+    {"action": "wait_timeout", "ms": 8000},
+    {"action": "screenshot", "name": "after-reload-8s"},
+    {"action": "scroll_to_bottom"},
+    {"action": "wait_timeout", "ms": 5000},
+    {"action": "screenshot", "name": "final", "full_page": true}
+  ]
+}

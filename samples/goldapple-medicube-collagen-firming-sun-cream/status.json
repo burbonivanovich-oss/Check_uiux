@@ -1,0 +1,58 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream",
+  "slug": "goldapple-medicube-collagen-firming-sun-cream",
+  "engine": "stealth",
+  "fetched_at": "2026-04-28T06:39:05.919Z",
+  "http_status": 200,
+  "size_bytes": 18531,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": null,
+    "cls": 0,
+    "fcp": null,
+    "ttfb": 176,
+    "dom_content_loaded": 963,
+    "load": 2050
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream",
+      "duration_ms": 6581,
+      "http_status": 200,
+      "challenged": false
+    },
+    {
+      "step": 1,
+      "action": "wait_timeout",
+      "duration_ms": 3548,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream"
+    },
+    {
+      "step": 2,
+      "action": "scroll_to_bottom",
+      "duration_ms": 633,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream"
+    },
+    {
+      "step": 3,
+      "action": "wait_timeout",
+      "duration_ms": 2034,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream"
+    },
+    {
+      "step": 4,
+      "action": "screenshot",
+      "name": "results",
+      "duration_ms": 51,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20collagen%20firming%20sun%20cream"
+    }
+  ]
+}

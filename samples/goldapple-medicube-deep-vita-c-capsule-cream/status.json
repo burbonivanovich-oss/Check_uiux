@@ -1,0 +1,58 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream",
+  "slug": "goldapple-medicube-deep-vita-c-capsule-cream",
+  "engine": "stealth",
+  "fetched_at": "2026-04-28T06:39:32.929Z",
+  "http_status": 200,
+  "size_bytes": 18532,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": null,
+    "cls": 0,
+    "fcp": null,
+    "ttfb": 202,
+    "dom_content_loaded": 1492,
+    "load": 2574
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream",
+      "duration_ms": 5954,
+      "http_status": 200,
+      "challenged": false
+    },
+    {
+      "step": 1,
+      "action": "wait_timeout",
+      "duration_ms": 3549,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream"
+    },
+    {
+      "step": 2,
+      "action": "scroll_to_bottom",
+      "duration_ms": 634,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream"
+    },
+    {
+      "step": 3,
+      "action": "wait_timeout",
+      "duration_ms": 2033,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream"
+    },
+    {
+      "step": 4,
+      "action": "screenshot",
+      "name": "results",
+      "duration_ms": 53,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20capsule%20cream"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.env
+.env.local
+.env.*.local
+
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.webp
+
+node_modules/

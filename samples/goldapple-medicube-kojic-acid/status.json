@@ -1,0 +1,58 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid",
+  "slug": "goldapple-medicube-kojic-acid",
+  "engine": "stealth",
+  "fetched_at": "2026-04-28T06:38:50.965Z",
+  "http_status": 200,
+  "size_bytes": 18531,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": null,
+    "cls": 0,
+    "fcp": null,
+    "ttfb": 229,
+    "dom_content_loaded": 1451,
+    "load": 2873
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid",
+      "duration_ms": 6220,
+      "http_status": 200,
+      "challenged": false
+    },
+    {
+      "step": 1,
+      "action": "wait_timeout",
+      "duration_ms": 3544,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid"
+    },
+    {
+      "step": 2,
+      "action": "scroll_to_bottom",
+      "duration_ms": 653,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid"
+    },
+    {
+      "step": 3,
+      "action": "wait_timeout",
+      "duration_ms": 2055,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid"
+    },
+    {
+      "step": 4,
+      "action": "screenshot",
+      "name": "results",
+      "duration_ms": 81,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20kojic%20acid"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/price-setting-kkt",
+  "slug": "kontur-price-setting-kkt",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:54.326Z",
+  "http_status": 200,
+  "size_bytes": 186352,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 1668,
+    "cls": 0,
+    "fcp": 1668,
+    "ttfb": 183,
+    "dom_content_loaded": 1488,
+    "load": 4390
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/price-setting-kkt",
+      "duration_ms": 18509,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

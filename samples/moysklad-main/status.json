@@ -1,0 +1,11 @@
+{
+  "url": "https://www.moysklad.ru/",
+  "slug": "moysklad-main",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T04:27:50.818Z",
+  "http_status": 200,
+  "size_bytes": 292807,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://kontur.ru/market/kkt/mspos-f20-f",
+  "slug": "kontur-kkt-mspos",
+  "engine": "playwright",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "collect_vitals": true
+}

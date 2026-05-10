@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/price/",
+  "slug": "kontur-price",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:55.653Z",
+  "http_status": 200,
+  "size_bytes": 754739,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 2396,
+    "cls": 0,
+    "fcp": 2396,
+    "ttfb": 327,
+    "dom_content_loaded": 2045,
+    "load": 5259
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/price/",
+      "duration_ms": 19119,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

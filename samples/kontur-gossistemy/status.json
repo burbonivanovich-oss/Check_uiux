@@ -1,0 +1,11 @@
+{
+  "url": "https://kontur.ru/market/gossistemy",
+  "slug": "kontur-gossistemy",
+  "engine": "playwright",
+  "fetched_at": "2026-04-26T04:29:29.474Z",
+  "http_status": 200,
+  "size_bytes": 246305,
+  "challenged": false,
+  "error": null,
+  "ok": true
+}

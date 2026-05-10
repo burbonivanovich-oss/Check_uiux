@@ -1,0 +1,58 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad",
+  "slug": "goldapple-medicube-deep-vita-c-pad",
+  "engine": "stealth",
+  "fetched_at": "2026-04-28T06:39:33.067Z",
+  "http_status": 200,
+  "size_bytes": 18531,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": null,
+    "cls": 0,
+    "fcp": null,
+    "ttfb": 172,
+    "dom_content_loaded": 1391,
+    "load": 2508
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad",
+      "duration_ms": 5908,
+      "http_status": 200,
+      "challenged": false
+    },
+    {
+      "step": 1,
+      "action": "wait_timeout",
+      "duration_ms": 3531,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad"
+    },
+    {
+      "step": 2,
+      "action": "scroll_to_bottom",
+      "duration_ms": 633,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad"
+    },
+    {
+      "step": 3,
+      "action": "wait_timeout",
+      "duration_ms": 2036,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad"
+    },
+    {
+      "step": 4,
+      "action": "screenshot",
+      "name": "results",
+      "duration_ms": 67,
+      "error": null,
+      "url_after": "https://goldapple.ru/catalogsearch/result?q=medicube%20deep%20vita%20c%20pad"
+    }
+  ]
+}

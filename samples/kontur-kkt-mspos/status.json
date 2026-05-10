@@ -1,0 +1,29 @@
+{
+  "url": "https://kontur.ru/market/kkt/mspos-f20-f",
+  "slug": "kontur-kkt-mspos",
+  "engine": "playwright",
+  "fetched_at": "2026-04-27T16:33:00.232Z",
+  "http_status": 200,
+  "size_bytes": 231941,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 2352,
+    "cls": 0,
+    "fcp": 2352,
+    "ttfb": 267,
+    "dom_content_loaded": 2020,
+    "load": 3974
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://kontur.ru/market/kkt/mspos-f20-f",
+      "duration_ms": 19045,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}

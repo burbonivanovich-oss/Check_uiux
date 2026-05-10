@@ -1,0 +1,15 @@
+{
+  "url": "https://goldapple.ru/catalogsearch/result?q=medicube%20triple%20collagen%20serum",
+  "slug": "goldapple-medicube-triple-collagen-serum",
+  "engine": "stealth",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  "accept_language": "ru-RU,ru;q=0.9,en;q=0.8",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "steps": [
+    {"action": "wait_timeout", "ms": 3500},
+    {"action": "scroll_to_bottom"},
+    {"action": "wait_timeout", "ms": 2000},
+    {"action": "screenshot", "name": "results", "full_page": true}
+  ]
+}

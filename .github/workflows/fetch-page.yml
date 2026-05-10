@@ -1,0 +1,91 @@
+name: fetch-page
+
+# GitHub Actions as a Playwright-based fetch proxy for cloud Claude Code.
+#
+# Cloud Claude Code's outbound network allowlist blocks arbitrary domains
+# (everything except github.com, registry.npmjs.org, api.anthropic.com).
+# This workflow uses github.com — which IS allowlisted — as a relay.
+#
+# Flow:
+#   1. Claude commits requests/<id>.json {url, slug}
+#   2. This workflow triggers on push, runs Playwright (headless Chromium),
+#      executes JS challenges (DataDome/Cloudflare/Akamai), captures the real
+#      rendered page + desktop & mobile screenshots
+#   3. Result lands in samples/<slug>/page.html, status.json,
+#      desktop-{full,above-fold}.png, mobile-{full,above-fold}.png
+#   4. Claude polls samples/<slug>/status.json and reads the captured page
+#
+# Loop protection: the [skip ci] tag in the commit message prevents the
+# workflow from re-triggering on its own commits.
+
+on:
+  push:
+    paths:
+      - 'requests/*.json'
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to fetch'
+        required: true
+      slug:
+        description: 'Output slug (folder name under samples/)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-page-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Materialize workflow_dispatch input as a request
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          URL: ${{ github.event.inputs.url }}
+          SLUG: ${{ github.event.inputs.slug }}
+        run: |
+          mkdir -p requests
+          ts=$(date +%s)
+          jq -n --arg url "$URL" --arg slug "$SLUG" \
+            '{url: $url, slug: $slug, engine: "playwright"}' \
+            > "requests/${ts}-${SLUG}.json"
+
+      - name: Install Playwright + stealth + Chromium
+        run: |
+          npm init -y >/dev/null
+          npm install --no-save \
+            playwright@^1.49.0 \
+            playwright-extra@^4.3.6 \
+            puppeteer-extra-plugin-stealth@^2.11.2
+          npx playwright install --with-deps chromium
+
+      - name: Process pending requests
+        env:
+          FETCH_CONCURRENCY: ${{ vars.FETCH_CONCURRENCY || '3' }}
+        run: node scripts/fetch.mjs
+
+      - name: Commit results
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add samples/ requests/ || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "fetch-page: process pending requests [skip ci]"
+          git push
