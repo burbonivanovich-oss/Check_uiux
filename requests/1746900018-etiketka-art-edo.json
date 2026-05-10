@@ -1,0 +1,10 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-edo-upd-markirovka",
+  "slug": "etiketka-art-edo",
+  "engine": "stealth",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "accept_language": "ru-RU,ru;q=0.9,en;q=0.8",
+  "captures": ["desktop", "mobile"],
+  "collect_vitals": true
+}

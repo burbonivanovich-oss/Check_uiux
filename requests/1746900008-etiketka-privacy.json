@@ -1,0 +1,10 @@
+{
+  "url": "https://etiketka-media.ru/privacy",
+  "slug": "etiketka-privacy",
+  "engine": "stealth",
+  "locale": "ru-RU",
+  "timezone": "Europe/Moscow",
+  "accept_language": "ru-RU,ru;q=0.9,en;q=0.8",
+  "captures": ["desktop", "mobile"],
+  "collect_vitals": true
+}
