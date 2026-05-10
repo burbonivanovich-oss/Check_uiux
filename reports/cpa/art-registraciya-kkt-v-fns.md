@@ -1,7 +1,7 @@
 # Регистрация онлайн-кассы в ФНС в 2026: пошаговая инструкция — CPA-аудит
 
 **URL:** https://etiketka-media.ru/blog/2026-05-01-registraciya-kkt-v-fns  
-**Оценка:** 5/10
+**Оценка:** 6/10
 
 **Скриншоты:** `/home/user/Check_uiux/samples/etiketka-art-kkt/`
 
