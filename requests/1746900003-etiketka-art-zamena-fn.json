@@ -2,5 +2,6 @@
   "url": "https://etiketka-media.ru/blog/2026-05-01-zamena-fn-poshagovo",
   "slug": "etiketka-art-zamena-fn",
   "engine": "stealth",
-  "collect_vitals": true
+  "collect_vitals": true,
+  "retry": 2
 }
