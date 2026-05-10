@@ -1,0 +1,29 @@
+{
+  "url": "https://etiketka-media.ru/blog/2026-05-01-ts-piot-shtrafy",
+  "slug": "etiketka-art-shtrafy",
+  "engine": "stealth",
+  "fetched_at": "2026-05-10T06:08:28.602Z",
+  "http_status": 200,
+  "size_bytes": 39987,
+  "challenged": false,
+  "error": null,
+  "ok": true,
+  "vitals": {
+    "lcp": 220,
+    "cls": 0.0036,
+    "fcp": 220,
+    "ttfb": 17,
+    "dom_content_loaded": 180,
+    "load": 1421
+  },
+  "steps": [
+    {
+      "step": 0,
+      "action": "goto",
+      "url": "https://etiketka-media.ru/blog/2026-05-01-ts-piot-shtrafy",
+      "duration_ms": 4794,
+      "http_status": 200,
+      "challenged": false
+    }
+  ]
+}
